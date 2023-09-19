@@ -6,9 +6,14 @@ This browser based web application to ...
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
+<<<<<<< HEAD
 * This is Xinli. I'm trying to see how this works. I'd like to add new information.
 * My name is Parteek and I am excited to learn how to use git!
-* ...
+=======
+* Charlie. I have a cat. 
+* This is Xinli. I'm trying to see how this works
+>>>>>>> 8713c62a3f6c8632422972f231ba1b09c015facd
+* My name is Parteek and I am very excited to learn how to use git!
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.

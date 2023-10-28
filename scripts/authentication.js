@@ -31,3 +31,4 @@ var uiConfig = {
     // Privacy policy url.
     privacyPolicyUrl: '<your-privacy-policy-url>'
 };
+ui.start('#firebaseui-auth-container', uiConfig);

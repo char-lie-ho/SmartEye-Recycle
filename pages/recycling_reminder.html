@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Scanning</title>
+    <meta name="comp1800 template" content="My 1800 App">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap Library CSS CDN go here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap Library JS CDN  go here -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- Other libraries go here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- firebaseAPI -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <!-- <script src="\scripts\firebaseAPI_smart_eye.js"></script> -->
+    <script type=”text/javascript” src=”https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js”></script>
+    <link
+        href=”https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css”
+        rel=”stylesheet”>
+    <script
+        src=”https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js”> </script>
+    <!-- Link to styles of your own -->
+    <link rel="stylesheet" href="/styles/stylesheet.css" type="text/css">
+
+    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+
+</head>
+
+<body>
+    <!-- nav bar -->
+    <nav id="navbarPlaceholder"></nav>
+
+    <div class="container py-5">
+        <div class="row py-5">
+            
+            <div class="col-10 col-sm-6">
+                <div class="cs-form">
+                    <h3>Do you want to set up an alarm?</h3>
+                    <br>
+                    <form action="#">
+                        <label for="alarmtime">Date and time:</label>
+                        <input type="datetime-local" id="alarmtime" name="alarmtime">
+                        <div class="card-body d-grid gap-2">
+                            <br>
+                            <button id="submit" class="btn btn-success col-10 col-sm-8 col-lg-6" type="button">Submit</button>
+                            <br><br>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+                <br>
+            <div class="col-10 col-sm-6">
+                <div class="cs-form">
+                    <h3>Your next collection: </h3>
+                    <br>
+                    <div id="cameraPlaceholder ">
+                        <div style="height: 200px">
+                            <div
+                                style="height: 200px; background-color: rgba(6, 73, 21, 0.1); text-align: center; margin: auto;">
+                                Placeholder for a list of future collections</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!------------------------------->
+
+    <!-- Footer -->
+    <footer id="footerPlaceholder"></footer>
+
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <!---------------------------------------------->
+
+    <!-- Link to scripts of your own -->
+    <script src="../scripts/firebaseAPI_smart_eye.js"></script>
+    <script src="../scripts/authentication.js"></script>
+    <script src="../scripts/skeleton.js"></script>
+
+
+</body>
+
+</html>

@@ -2,11 +2,8 @@ body {
     background-color: rgb(206, 234, 245);
 }
 
-.bg-danger-subtle {
-    background-color: rgb(208, 198, 195) !important;
-}
 
-a {
+nav a {
     color: white !important;
 }
 

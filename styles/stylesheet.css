@@ -20,3 +20,9 @@ nav a {
     background-color: rgb(206, 234, 245);
     align-items: center;
 }
+
+
+/* add padding in the bottom so that it won't overlap with the content*/
+body {
+    padding-bottom: 120px;
+}

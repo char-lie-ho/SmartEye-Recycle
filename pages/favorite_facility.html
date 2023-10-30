@@ -12,31 +12,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+    
+    <!-- Other libraries go here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- firebaseAPI -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <!-- <script src="\scripts\firebaseAPI_smart_eye.js"></script> -->
+    
+    <!-- Link to styles of your own -->
+    <link rel="stylesheet" href="../styles/stylesheet.css" type="text/css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-success fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href=".././pages/index.html">Smart Eye Recycling</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> About us </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> Support </a>
-                    </li>
-            </div>
-            </li>
-            </ul>
-        </div>
-        </div>
-    </nav>
+    <!-- nav bar -->
+    <nav id="navbarPlaceholder"></nav>
 
     <div class="px-4 py-5 my-5 text-center">
         <img class="d-block mx-auto mb-4" alt="" width="1" height="1">
@@ -48,7 +42,20 @@
                 <button type="button" class="btn btn-outline-secondary btn-lg px-4"> Review </button>
                 <button type="button" class="btn btn-outline-secondary btn-lg px-4"> Directions </button>
                 <button onclick="document.location='post_scan.html'"> Back </button>
+            </div>
+        </div>
+    </div>
+<!-- Footer -->
+<footer id="footerPlaceholder"></footer>
+<!---------------------------------------------->
+<!-- Your own JavaScript functions go here    -->
+<!---------------------------------------------->
+
+<!-- Link to scripts of your own -->
+<script src="../scripts/firebaseAPI_smart_eye.js"></script>
+<script src="../scripts/skeleton.js"></script>
+<script src="../scripts/main.js"></script>
+<!-- <script src="./scripts/script.js"></script> -->
+
 </body>
-
-
 </html>

@@ -33,34 +33,120 @@
     <link rel="stylesheet" href="../styles/stylesheet.css" type="text/css">
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Icons (Material Design)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
     <!-- nav bar -->
     <nav id="navbarPlaceholder"></nav>
 
-    <div class="px-4 py-5 my-5 text-center">
+    <div class="px-5 py-5 my-5 text-center">
         <img class="d-block mx-auto mb-4" alt="" width="1" height="1">
         <h1 class="display-5 fw-bold"> Please select an option </h1>
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4"> Lets Recycle Smart Together</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4"> Nearby Facility 1 </button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4"> Nearby Facility 2 </button>
+
+                <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4"> Nearby Facility 1
+                    <p> 1.8km </p> -->
+                <button onclick="document.location='nearby_facility_one.html'"> Nearby Facility 1
+                    <p> 1.8km </p>
+
+
+                    <div class="card-body">
+                        <!-- <p>Rate your overall experience:</p> -->
+                        <span class="material-icons" id="star1">star</span>
+                        <span class="material-icons" id="star2">star</span>
+                        <span class="material-icons" id="star3">star</span>
+                        <span class="material-icons" id="star3">star</span>
+                        <span class="material-icons" id="star3">star</span>
+                    </div>
+                </button>
+
+                <button onclick="document.location=''"> Nearby Facility 2
+                    <p> 2.9km </p>
+                    <div class="card-body">
+                        <!-- <p>Rate your overall experience:</p> -->
+                        <span class="material-icons" id="star1">star</span>
+                        <span class="material-icons" id="star2">star</span>
+                        <span class="material-icons" id="star3">star</span>
+                        <span class="material-icons" id="star3">star</span>
+                        <span class="material-icons" id="star4">star_outline</span>
+                    </div>
+                </button>
+
+                <button onclick="document.location=''"> Nearby Facility 3
+                    <p> 4.1km </p>
+                    <div class="card-body">
+                        <!-- <p>Rate your overall experience:</p> -->
+                        <span class="material-icons" id="star1">star</span>
+                        <span class="material-icons" id="star2">star</span>
+                        <span class="material-icons" id="star3">star</span>
+                        <span class="material-icons" id="star4">star_outline</span>
+                        <span class="material-icons" id="star4">star_outline</span>
+
+                    </div>
+                </button>
+
+                <button onclick="document.location=''"> Nearby Facility 1
+                    <p> 6.0km </p>
+                    <div class="card-body">
+                        <!-- <p>Rate your overall experience:</p> -->
+                        <span class="material-icons" id="star1">star</span>
+                        <span class="material-icons" id="star2">star</span>
+                        <span class="material-icons" id="star4">star_outline</span>
+                        <span class="material-icons" id="star4">star_outline</span>
+                        <span class="material-icons" id="star4">star_outline</span>
+
+                    </div>
+                </button>
+
                 <button onclick="document.location='post_scan.html'"> Back </button>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <img src="images/drink4.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"> Nearby Facility 1 </h5>
+                    <p class="card-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius mollitia debitis
+                        libero, nisi tempore quo! 1.5km </p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <footer class="bg-success text-center fixed-bottom">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!-- something goes here -->
+        </div>
+        <!-- Grid container -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            DTC-12 Parteek Grawal, Charlie Ho, Xinli Wang
+        </div>
+    </footer>
+
+
 </body>
 
-    <!-- Footer -->
-    <footer id="footerPlaceholder"></footer>
-    
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-    
-    <!-- Link to scripts of your own -->
-    <script src="../scripts/firebaseAPI_smart_eye.js"></script>
-    <script src="../scripts/skeleton.js"></script>
-    <script src="../scripts/main.js"></script>
-    <!-- <script src="./scripts/script.js"></script> -->
+<!-- Footer -->
+<footer id="footerPlaceholder"></footer>
+
+<!---------------------------------------------->
+<!-- Your own JavaScript functions go here    -->
+<!---------------------------------------------->
+
+<!-- Link to scripts of your own -->
+<script src="../scripts/firebaseAPI_smart_eye.js"></script>
+<script src="../scripts/skeleton.js"></script>
+<script src="../scripts/main.js"></script>
+<!-- <script src="./scripts/script.js"></script> -->
 
 </html>

@@ -30,7 +30,7 @@
 
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="../styles/stylesheet.css" type="text/css">
 
@@ -62,15 +62,14 @@
         </div>
     </div>
     <!-- Xinli: login div -->
-    <div class="container">
+    <div class="container col-md-6">
         <h1>Let's Login!</h1>
+        <div id="firebaseui-auth-container"></div>
+        <div id="loader">Loading...</div>
     </div>
-    <div id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>
 
 
-    <!-- Footer -->
-    <footer id="footerPlaceholder"></footer>
+    <!-- Remove the footer for non-login user-->
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->

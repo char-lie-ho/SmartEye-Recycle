@@ -23,3 +23,21 @@ function getNameFromAuth() {
     });
 }
 getNameFromAuth(); //run the function
+
+
+//get user email address
+function getEmailFromAuth() {
+    firebase.auth().onAuthStateChanged(user => {
+        // Check if a user is signed in:
+        if (user) {
+            // Do something for the currently logged-in user here: 
+            console.log(user.email); 
+            userEmail = user.email;
+            //method #1:  insert with JS
+            document.getElementById("email-goes-here").innerText = userEmail;
+        } else {
+            // No user is signed in.
+        }
+    });
+}
+getEmailFromAuth(); //run the function

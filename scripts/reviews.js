@@ -18,7 +18,6 @@ $(document).ready(function () {
 // Submit a review
 function submitReview() {
     console.log('Submitted');
-    console.log(document.getElementById('rating-value').innerHTML);
     // Define a variable for the collection you want to create in Firestore to populate data
     var review = db.collection("reviews");
     review.add({

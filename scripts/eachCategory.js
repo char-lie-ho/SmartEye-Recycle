@@ -1,15 +1,19 @@
-function displayCategoryInfo() {
-    let params = new URL(window.location.href); //get URL of search bar
-    let ID = params.searchParams.get("docID"); //get value for key "id"
-    console.log(ID);
+// Reference to the 'category' collection, then the 'paper_cardboard' subcollection
+const categoryRef = db.collection('category').doc('paper_cardboard');
 
-    // doublecheck: is your collection called "Reviews" or "reviews"?
-    db.collection("category")
-        .doc(ID)
-        .get()
-        .then(doc => {
-            Name = doc.data().recycable;
-            document.getElementById("material").innerHTML = Name;
-        });
-}
-displayCategoryInfo();
+// Query the 'instruction' and 'recyclable' fields
+categoryRef.get()
+    .then((doc) => {
+        if (doc.exists) {
+            const instruction = doc.data().instruction;
+            const recyclable = doc.data().recyclable;
+            console.log(`Instruction: ${instruction}, Recyclable: ${recyclable}`);
+            document.getElementById("instruction-go-here").innerText = instruction;
+            document.getElementById("recyclable-go-here").innerText = recyclable;
+        } else {
+            console.log('No such document!');
+        }
+    })
+    .catch((error) => {
+        console.error('Error retrieving document:', error);
+    });

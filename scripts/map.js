@@ -1,4 +1,4 @@
-<script src="./scripts/map.js"></script>
+
 function showMap() {
     //-----------------------------------------
     // Define and initialize basic mapbox data

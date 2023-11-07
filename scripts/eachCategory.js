@@ -7,9 +7,11 @@ categoryRef.get()
         if (doc.exists) {
             const instruction = doc.data().instruction;
             const recyclable = doc.data().recyclable;
+            const examples = doc.data().examples;
             console.log(`Instruction: ${instruction}, Recyclable: ${recyclable}`);
             document.getElementById("instruction-go-here").innerText = instruction;
             document.getElementById("recyclable-go-here").innerText = recyclable;
+            document.getElementById("example-go-here").innerText = examples;
         } else {
             console.log('No such document!');
         }

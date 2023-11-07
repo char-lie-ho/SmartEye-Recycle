@@ -13,6 +13,8 @@ categoryRef.get()
             document.getElementById("instruction-go-here").innerText = instruction;
             document.getElementById("recyclable-go-here").innerText = recyclable;
             document.getElementById("example-go-here").innerText = examples;
+            document.getElementById('paper').setAttribute('src', image_url);
+
             console.log(image_url)
         } else {
             console.log('No such document!');

@@ -10,6 +10,7 @@ function displayCardsDynamically(collection) {
                 var address = doc.data().address; 
                 var operation = doc.data().hours_of_operation;
                 var facilityID = doc.id;
+                var image_url = doc.data().image;
                 let eachcard = cardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (eachcard) that will be filled with Firestore data.
 
                 //update title and text and image
@@ -22,7 +23,7 @@ function displayCardsDynamically(collection) {
                 eachcard.getElementById("day5").innerText = operation[4];
                 eachcard.getElementById("day6").innerText = operation[5];
                 eachcard.getElementById("day7").innerText = operation[6];
-                // eachcard.querySelector('.card-image').src = `./images/${hikeCode}.jpg`; //Example: NV01.jpg
+                eachcard.querySelector('.card-image').src = image_url
                 eachcard.querySelector('a').href = "nearby_facility.html?docID=" + facilityID;
 
                 //attach to gallery, Example: "hikes-go-here"

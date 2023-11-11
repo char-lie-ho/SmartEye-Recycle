@@ -14,6 +14,22 @@ $(document).ready(function () {
     }
 });
 
+//load the facility name
+var facilityID = localStorage.getItem("facilityID");
+console.log(facilityID)
+
+function getFacilityName(id) {
+    db.collection("facility")
+        .doc(id)
+        .get()
+        .then((facilities) => {
+            var facilityName = facilities.data().name
+            document.getElementById('facilityName').innerHTML = facilityName 
+        }
+        )
+}
+
+getFacilityName(facilityID);
 
 // Submit a review
 function submitReview() {
@@ -21,9 +37,9 @@ function submitReview() {
     // Define a variable for the collection you want to create in Firestore to populate data
     var review = db.collection("reviews");
     review.add({
-        facility_name: document.getElementById('facilityName').value,
+
         waitingTime: parseInt(document.getElementById('waitingTime').value),
-        cleanlinessRating: document.querySelector('input[name="cleanlinessRating"]:checked').id,
+
         overallRating: document.getElementById('rating-value').innerHTML,
         comment: document.getElementById('comment').value,
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
@@ -41,7 +57,7 @@ document.getElementById('submit_review').addEventListener('click', function () {
     submitReview();
 });
 
+// take the user back to the previous page
 function goBack() {
-    // take the user back to the previous page
     window.history.back();
 }

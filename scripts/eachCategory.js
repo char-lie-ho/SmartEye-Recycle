@@ -23,3 +23,8 @@ categoryRef.get()
     .catch((error) => {
         console.error('Error retrieving document:', error);
     });
+
+// take the user back to the previous page
+function goBack() {
+    window.history.back();
+}

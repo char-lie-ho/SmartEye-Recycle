@@ -56,127 +56,126 @@
                         <h6>Types of Materials Handled, Select your options:</h6>
                     </label>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Recyclable" id="recyclable">
+                        <input class="form-check-input" type="checkbox" value="Recyclable" id="materials">
                         <label class="form-check-label" for="recyclable">
                             Recyclable paper, metal, plastic, and glass
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Electronics" id="electronics">
+                        <input class="form-check-input" type="checkbox" value="Electronics" id="materials">
                         <label class="form-check-label" for="electronics">
                             Electronics
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="YardTrimmings" id="yardTrimmings">
+                        <input class="form-check-input" type="checkbox" value="YardTrimmings" id="materials">
                         <label class="form-check-label" for="yardTrimmings">
                             Yard trimmings, clean wood, organics
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Garbage" id="garbage">
+                        <input class="form-check-input" type="checkbox" value="Garbage" id="materials">
                         <label class="form-check-label" for="garbage">
                             Garbage
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="BulkyItems" id="bulkyItems">
+                        <input class="form-check-input" type="checkbox" value="BulkyItems" id="materials">
                         <label class="form-check-label" for="bulkyItems">
                             Bulky items
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Others" id="others">
+                        <input class="form-check-input" type="checkbox" value="Others" id="materials">
                         <label class="form-check-label" for="others">
                             Others
                         </label>
                     </div>
+                </div>
+                <br>
+                <!-- Wait time -->
+                <div class="col-6">
+                    <label for="waitingTime">
+                        <h6>Waiting Time (in minutes):</h6>
+                    </label>
+                    <input type="number" class="form-control" id="waitingTime" name="waitingTime" min="0" step="1" value="0">
+                </div>
+                <br>
 
-                    <br>
-                    <!-- Wait time -->
-                    <div class="col-6">
-                        <label for="waitingTime">
-                            <h6>Waiting Time (in minutes):</h6>
-                        </label>
-                        <input type="number" class="form-control" id="waitingTime" name="waitingTime" min="0" step="1">
+                <!-- Cleanliness -->
+                <div class="card-body form-group">
+                    <h6>Facility cleanliness:</h6>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="cleanliness" value="excellent">
+                        <label>Excellent</label>
                     </div>
-                    <br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="cleanliness" value="good">
+                        <label>Good</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="cleanliness" value="average">
+                        <label>Average</label>
+                    </div>                    
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="cleanliness" value="poor">
+                        <label>Poor</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="cleanliness" value="unSure" checked="">
+                        <label>Not sure</label>
+                    </div>
+                </div>
+                <br>
+                <!-- Overall rating -->
+                <div>
+                    <h6>Overall rating: <span id="rating-value" class="rating-value"></span></h6>
+                    <div class="star-rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                </div>
+                <br>
+                <!-- Willingness to Recommend -->
+                <div>
+                    <h6 for="recommend">Would you recommend this facility to others?</h6>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="recommend" value="Yes">
+                        <label>Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="recommend" value="No">
+                        <label>No</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="recommend" value="unSure" checked="">
+                        <label>Not sure</label>
+                    </div>
+                </div>
+                <br>
+                <!-- comments -->
+                <div>
+                    <label for="comment">
+                        <h6>Comments: (Optional)</h6>
+                    </label>
+                    <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+                </div>
 
-                    <!-- Cleanliness -->
-                    <div class="card-body form-group">
-                        <h6>Facility cleanliness:</h6>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="cleanliness" value="poor">
-                            <label>Poor</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="cleanliness" value="average">
-                            <label>Average</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="cleanliness" value="good">
-                            <label>Good</label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="cleanliness" value="excellent" >
-                            <label>Excellent</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="cleanliness" value="unSure" checked="">
-                            <label>Not sure</label>
-                        </div>
-                    </div>
-                    <br>
-                    <!-- Overall rating -->
-                    <div>
-                        <h6>Overall rating: <span id="rating-value" class="rating-value"></span></h6>
-                        <div class="star-rating">
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                        </div>
-                    </div>
-                    <br>
-                    <!-- Willingness to Recommend -->
-                    <div>
-                        <h6 for="recommend">Would you recommend this facility to others?</h6>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="recommend" value="Yes">
-                            <label>Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="recommend" value="No">
-                            <label>No</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="recommend" value="unSure" checked="">
-                            <label>Not sure</label>
-                        </div>
-                    </div>
-                    <br>
-                    <!-- comments -->
-                    <div>
-                        <label for="comment">
-                            <h6>Comments: (Optional)</h6>
-                        </label>
-                        <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
-                    </div>
-
-                    <!-- Submit  -->
-                    <br>
-                    <div>
-                        <button id="submit_review" class="btn btn-primary" type="button">Submit feedback</button>
-                        <a class="btn btn-outline-secondary card-href" onclick="goBack()"><span
-                                class="material-symbols-outlined">undo</span></a>
-                    </div>
+                <!-- Submit  -->
+                <br>
+                <div>
+                    <button id="submit_review" class="btn btn-primary" type="button">Submit feedback</button>
+                    <a class="btn btn-outline-secondary card-href" onclick="goBack()"><span
+                            class="material-symbols-outlined">undo</span></a>
+                </div>
             </form>
         </div>
     </div>

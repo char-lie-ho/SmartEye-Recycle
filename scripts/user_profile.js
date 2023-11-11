@@ -1,3 +1,8 @@
+// take the user back to the previous page
+function goBack() {
+    window.history.back();
+}
+
 //get user name
 function getNameFromAuth() {
     firebase.auth().onAuthStateChanged(user => {

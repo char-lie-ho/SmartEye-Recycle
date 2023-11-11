@@ -1,3 +1,9 @@
+// take the user back to the previous page
+function goBack() {
+  window.history.back();
+}
+
+
 let codeReader = null;
 
 function startScanning() {

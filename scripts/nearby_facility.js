@@ -16,13 +16,6 @@ function displayCardsDynamically(collection) {
                 //update title and text and image
                 eachcard.querySelector('.card-title').innerHTML = title;
                 eachcard.querySelector('.card-address').innerHTML = address; 
-                eachcard.getElementById("day1").innerText = operation[0];
-                eachcard.getElementById("day2").innerText = operation[1];
-                eachcard.getElementById("day3").innerText = operation[2];
-                eachcard.getElementById("day4").innerText = operation[3];
-                eachcard.getElementById("day5").innerText = operation[4];
-                eachcard.getElementById("day6").innerText = operation[5];
-                eachcard.getElementById("day7").innerText = operation[6];
                 eachcard.querySelector('.card-image').src = image_url
                 //load the appropriate facility
                 eachcard.querySelector('a').href = "facility_template.html?docID=" + facilityID;

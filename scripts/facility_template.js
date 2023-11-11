@@ -1,9 +1,10 @@
 function displayFacilityInfo() {
     let params = new URL(window.location.href); //get URL of search bar
     let ID = params.searchParams.get("docID"); //get value for key "id"
+    localStorage.setItem('facilityID', ID); // save the facility id to local storage
     console.log(ID);
-
     
+    //retrieve information from database
     db.collection("facility")
         .doc(ID)
         .get()

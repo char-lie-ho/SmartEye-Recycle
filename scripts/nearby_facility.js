@@ -29,3 +29,9 @@ function displayCardsDynamically(collection) {
 }
 
 displayCardsDynamically("facility");  //input param is the name of the collection
+
+
+// take the user back to the previous page
+function goBack() {
+    window.history.back();
+}

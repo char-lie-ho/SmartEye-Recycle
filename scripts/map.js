@@ -201,3 +201,9 @@ db.collection("facility").get().then((querySnapshot) => {
         console.log(coordinates)
     });
 });
+
+
+// take the user back to the previous page
+function goBack() {
+    window.history.back();
+}

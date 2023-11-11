@@ -47,9 +47,13 @@
     <div class="px-5 py-5 my-5 text-center">
         <h3> Your nearby facilities: </h3>
         <div class="container mx-auto">
-            <br>
             <div id="facilities-goes-here" class="row row-cols-auto d-grid gap-2 justify-content-center">
-
+                <div>
+                    <a type="button" id="floatingButton" class="btn btn-outline-success btn-lg px-4" href="map.html">
+                        View in Map</a>
+                    <a class="btn btn-outline-secondary card-href" onclick="goBack()"><span
+                            class="material-symbols-outlined">undo</span></a>
+                </div>
                 <!-- load facility -->
                 <template id="facilityTemplate">
                     <div class="card py-2 mx-2">
@@ -65,9 +69,7 @@
         </div>
         <div>
             <br>
-            <a type="button" id="floatingButton" class="btn btn-outline-secondary btn-lg px-4" href="map.html"> Map</a>
-            <a type="button" class="btn btn-outline-secondary btn-lg px-4" onclick="document.location='post_scan.html'">
-                Back </a>
+
         </div>
     </div>
     </div>

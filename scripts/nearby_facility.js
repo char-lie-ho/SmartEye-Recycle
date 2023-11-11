@@ -24,7 +24,8 @@ function displayCardsDynamically(collection) {
                 eachcard.getElementById("day6").innerText = operation[5];
                 eachcard.getElementById("day7").innerText = operation[6];
                 eachcard.querySelector('.card-image').src = image_url
-                eachcard.querySelector('a').href = "nearby_facility.html?docID=" + facilityID;
+                //load the appropriate facility
+                eachcard.querySelector('a').href = "facility_template.html?docID=" + facilityID;
 
                 //attach to gallery, Example: "hikes-go-here"
                 document.getElementById("facilities-goes-here").appendChild(eachcard);

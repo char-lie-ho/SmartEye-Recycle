@@ -51,31 +51,33 @@
                     <input type="text" id="facilityName" class="form-control" required>
                 </div>
                 <br>
-            
+
                 <!-- Wait time -->
                 <div class="col-6">
                     <label for="waitingTime">Waiting Time (in minutes):</label>
                     <input type="number" class="form-control" id="waitingTime" name="waitingTime" min="0" step="1">
                 </div>
                 <br>
-            
+
                 <!-- Cleanliness -->
                 <div class="card-body form-group">
                     <p>Facility cleanliness:</p>
                     <div class="btn-group" role="group" aria-label="Cleanliness Rating">
                         <input type="radio" class="btn-check" name="cleanlinessRating" id="poor" autocomplete="off">
                         <label class="btn btn-outline-primary" for="poor">Poor</label>
-            
+
                         <input type="radio" class="btn-check" name="cleanlinessRating" id="fair" autocomplete="off">
                         <label class="btn btn-outline-primary" for="fair">Fair</label>
-            
-                        <input type="radio" class="btn-check" name="cleanlinessRating" id="average" autocomplete="off" checked>
+
+                        <input type="radio" class="btn-check" name="cleanlinessRating" id="average" autocomplete="off"
+                            checked>
                         <label class="btn btn-outline-primary" for="average">Average</label>
-            
+
                         <input type="radio" class="btn-check" name="cleanlinessRating" id="good" autocomplete="off">
                         <label class="btn btn-outline-primary" for="good">Good</label>
-            
-                        <input type="radio" class="btn-check" name="cleanlinessRating" id="excellent" autocomplete="off">
+
+                        <input type="radio" class="btn-check" name="cleanlinessRating" id="excellent"
+                            autocomplete="off">
                         <label class="btn btn-outline-primary" for="excellent">Excellent</label>
                     </div>
                 </div>
@@ -92,22 +94,24 @@
                     </div>
                 </div>
                 <br>
-            
+
                 <!-- comments -->
                 <div>
                     <label for="comment">Comments: (Optional)</label>
                     <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
                 </div>
-            
+
                 <!-- Submit  -->
                 <br>
                 <div>
                     <button id="submit_review" class="btn btn-primary" type="button">Submit feedback</button>
+                    <a class="btn btn-outline-secondary card-href" onclick="goBack()"><span
+                            class="material-symbols-outlined">undo</span></a>
                 </div>
             </form>
         </div>
     </div>
-    
+
     <!------------------------------->
 
     <!-- Footer -->

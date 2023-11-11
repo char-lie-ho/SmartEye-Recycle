@@ -40,3 +40,8 @@ function submitReview() {
 document.getElementById('submit_review').addEventListener('click', function () {
     submitReview();
 });
+
+function goBack() {
+    // take the user back to the previous page
+    window.history.back();
+}

@@ -37,10 +37,10 @@ function submitReview() {
     // Define a variable for the collection you want to create in Firestore to populate data
     var review = db.collection("reviews");
     review.add({
-
         waitingTime: parseInt(document.getElementById('waitingTime').value),
-
+        cleanlinessRating: document.querySelector('input[name="cleanliness"]:checked').value,
         overallRating: document.getElementById('rating-value').innerHTML,
+        recommended: document.querySelector('input[name="recommend"]:checked').value,
         comment: document.getElementById('comment').value,
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
     })

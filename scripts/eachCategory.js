@@ -13,14 +13,12 @@ categoryRef.get()
             const recyclable = doc.data().recyclable;
             const examples = doc.data().examples;
             const image_url = doc.data().img;
-            console.log(`Instruction: ${instruction}, Recyclable: ${recyclable}`);
+            // console.log(`Instruction: ${instruction}, Recyclable: ${recyclable}`);
             document.getElementById("material").innerText = title;
             document.getElementById("instruction-go-here").innerText = instruction;
             document.getElementById("recyclable-go-here").innerText = recyclable;
             document.getElementById("example-go-here").innerText = examples;
             document.getElementById('material_image').setAttribute('src', image_url);
-
-            console.log(image_url)
         } else {
             console.log('No such document!');
         }

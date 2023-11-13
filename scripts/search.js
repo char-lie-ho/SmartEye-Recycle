@@ -18,7 +18,7 @@ function displayCardsDynamically(collection) {
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('.card-img').src = `../images/${imageCode}.jpg`; //Example: NV01.jpg
                 newcard.querySelector('a').href = "category_template.html?docID=" + docID;
-                console.log(title)
+                // console.log(title)
                 //attach to gallery, Example: "hikes-go-here"
                 document.getElementById("categories-goes-here").appendChild(newcard);
 

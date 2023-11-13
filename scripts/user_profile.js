@@ -20,15 +20,17 @@ function getUserInfoFromAuth() {
                     // Get user information
                     userName = user.displayName;
                     userEmail = user.email;
-
-
+                    userCity = user.city
+                    //if the data fields are not empty, then write them in to the form.
                     if (userName != null) {
                         document.getElementById("nameInput").value = userName;
                     }
                     if (userEmail != null) {
                         document.getElementById("emailInput").value = userEmail;
                     }
-
+                    if (userCity != null) {
+                        document.getElementById("cityInput").value = userCity;
+                    }
                     // Insert user name using JS
                     document.getElementById("name-goes-here").innerText = userName;
 
@@ -51,18 +53,21 @@ function editUserInfo() {
 }
 
 function saveUserInfo() {
-    userName = document.getElementById('nameInput').value;
-    userEmail = document.getElementById('emailInput').value;
-    userCity = document.getElementById('cityInput').value;
-}
+    console.log('save')
+    //get entered info from user
+    userName = document.getElementById("nameInput").value;
+    userSchool = document.getElementById("schoolInput").value;
+    userCity = document.getElementById("cityInput").value;
 
-currentUser.update({
-    name: userName,
-    email: userEmail,
-    city: userCity
-})
-    .then(() => {
-        console.log("Document successfully updated!");
+
+    currentUser.update({
+        name: userName,
+        school: userSchool,
+        city: userCity
     })
-//call the function to run it
-populateUserInfo();
+        .then(() => {
+            console.log("Document successfully updated!");
+        })
+
+    document.getElementById('personalInfoFields').disabled = true;
+}

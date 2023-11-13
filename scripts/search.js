@@ -29,13 +29,10 @@ function displayCardsDynamically(collection) {
 
 displayCardsDynamically("category");  //input param is the name of the collection
 
-// search function, read the search prompt
+function saveSearchandRedirect() {
 
-function search() {
-    // get the input element by its ID
-    const searchTextElement = document.getElementById("searchText");
-    // get the value attribute of the input element
-    const searchValue = searchTextElement.value;
-    console.log(searchValue);
+    let keywords = document.getElementById('example-search-input').value;
+    localStorage.setItem("keywords", keywords)
+    console.log(keywords);
+    window.location.href = 'category_search_by_words.html';
 }
-

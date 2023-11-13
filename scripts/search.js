@@ -31,7 +31,7 @@ displayCardsDynamically("category");  //input param is the name of the collectio
 
 function saveSearchandRedirect() {
 
-    let keywords = document.getElementById('example-search-input').value;
+    var keywords = document.getElementById("searchText").value;
     localStorage.setItem("keywords", keywords)
     console.log(keywords);
     window.location.href = 'category_search_by_words.html';

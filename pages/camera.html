@@ -27,8 +27,6 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- <script src="\scripts\firebaseAPI_smart_eye.js"></script> -->
 
-    <!-- import zxing library, mainly QR code -->
-    <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
     <!--import barcode library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
 
@@ -37,6 +35,16 @@
 
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="../styles/stylesheet.css" type="text/css">
+
+    <style>
+        /* In order to place the tracking correctly */
+        canvas.drawing,
+        canvas.drawingBuffer {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -47,12 +55,15 @@
     <div class="container col-xxl-8 px-4 py-4">
         <div class="row align-items-center g-5 py-5">
             <div class="col d-grid gap-2 justify-content-md-start">
+                <h2>Barcode Scanner</h2>
                 Ready to scan? Activate your camera and let's get started! Please scan an item for recycling
                 instruction.
                 <!-- camera -->
                 <div class="col embed-responsive modal-dialog">
-                    <video id="webcam-preview" style="width: 100%;"></video>
-                    <p id="result"></p>
+                    <!-- Div to show the scanner -->
+                    <div id="scanner-container"></div>
+                    <h5><span id="result"></span></h5>
+                    
                 </div>
             </div>
 

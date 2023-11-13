@@ -1,7 +1,4 @@
-// take the user back to the previous page
-function goBack() {
-    window.history.back();
-}
+var currentUser = null;  
 
 // Get user name and email
 function getUserInfoFromAuth() {
@@ -9,6 +6,7 @@ function getUserInfoFromAuth() {
         // Check if a user is signed in:
         if (user) {
             currentUser = db.collection("users").doc(user.uid)
+            console.log(currentUser)
             //get the document for current user.
             currentUser.get()
                 .then(userDoc => {
@@ -17,11 +15,13 @@ function getUserInfoFromAuth() {
                     console.log(user.displayName); // Print the user name in the browser console
                     console.log(user.email); // Print the email in the browser console
 
+
                     // Get user information
-                    userName = user.displayName;
-                    userEmail = user.email;
-                    userPhone = user.phone;
-                    userCity = user.city
+                    var userName = user.displayName;
+                    var userEmail = user.email;
+                    var userPhone = userDoc.data().phone;
+                    var userCity = userDoc.data().city;
+                    console.log(userCity)
 
                     //if the data fields are not empty, then write them in to the form.
                     if (userName != null) {
@@ -39,6 +39,13 @@ function getUserInfoFromAuth() {
 
                     // Insert email using JS
                     document.getElementById("email-goes-here").innerText = userEmail;
+
+                    // Insert city using JS
+                    document.getElementById("city-goes-here").innerText = userCity;
+
+                    // Insert email using JS
+                    document.getElementById("phone-goes-here").innerText = userPhone;
+
 
                 })
         } else {
@@ -62,7 +69,6 @@ function saveUserInfo() {
     userPhone = document.getElementById("phoneInput").value;
     userCity = document.getElementById("cityInput").value;
 
-
     currentUser.update({
         name: userName,
         phone: userPhone,
@@ -73,4 +79,10 @@ function saveUserInfo() {
         })
 
     document.getElementById('personalInfoFields').disabled = true;
+}
+
+
+// take the user back to the previous page
+function goBack() {
+    window.history.back();
 }

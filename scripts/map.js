@@ -30,15 +30,20 @@ function showMap() {
                 map.addImage('eventpin', image); // Pin Icon
 
                 // READING information from "hikes" collection in Firestore
-                db.collection('hikes').get().then(allHikes => {
+                db.collection('facility').get().then(allFacilities => {
                     const features = []; // Defines an empty array for information to be added to
-
-                    allHikes.forEach(doc => {
-                        lat = doc.data().lat;
-                        lng = doc.data().lng;
-                        console.log(lat, lng);
-                        coordinates = [lng, lat];
-                        console.log(coordinates);
+                    allFacilities.forEach(doc => {
+                        var facility = doc.data();
+                        if (facility.coordinates) {
+                            // Access the latitude and longitude values
+                            var latitude = facility.coordinates.latitude;
+                            var longitude = facility.coordinates.longitude;
+                            // Log the coordinates
+                            console.log("Latitude: " + latitude + ", Longitude: " + longitude);
+                        } else {
+                            console.log("Coordinates not found for document with ID: " + doc.id);
+                        }
+                
                         // Coordinates
                         event_name = doc.data().name; // Event Name
                         preview = doc.data().details; // Text Preview
@@ -232,15 +237,6 @@ function showMap() {
 
 // Call the function to display the map with the user's location and event pins
 showMap();
-
-db.collection("facility").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-        var facility = doc.data();
-        var coordinates = facility.coordinates;
-        console.log(coordinates)
-    });
-});
-
 
 // take the user back to the previous page
 function goBack() {

@@ -32,6 +32,10 @@ displayCardsDynamically("category");  //input param is the name of the collectio
 //search function
 
 function search() {
-    searchText = document.getElementById("searchText").innerText;
-    console.log(searchText)
+    // get the input element by its ID
+    const searchTextElement = document.getElementById("searchText");
+    // get the value attribute of the input element
+    const searchValue = searchTextElement.value;
+    console.log(searchValue);
 }
+

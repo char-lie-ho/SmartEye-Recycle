@@ -25,7 +25,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-    <!-- <script src="\scripts\firebaseAPI_smart_eye.js"></script> -->
+   
 
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -43,90 +43,93 @@
 
 
     <!------------user profile------------------->
+
     <section class="vh-100 py-5">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-md-6 col-xl-4">
-                    <div class="card" style="border-radius: 15px;">
-                        <div class="card-body text-center">
-                            <div class="mt-3 mb-4">
-                                <img src="../images/profile.jpg" class="rounded-circle img-fluid"
-                                    style="width: 100px;" />
-                            </div><button type="button" class="btn btn-outline-primary btn-rounded btn-sm">
-                                Update Profile Picture
-                            </button>
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-md-6 col-xl-4">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body text-center">
+                                <div class="mt-3 mb-4">
+                                    <img src="../images/profile.jpg" class="rounded-circle img-fluid"
+                                        style="width: 100px;" />
+                                </div><button type="button" class="btn btn-outline-primary btn-rounded btn-sm">
+                                    Update Profile Picture
+                                </button>
 
-                            <br><br>
-                            <h4 class="mb-2"><span id="name-goes-here"></span></h4>
-                            <div class="star-rating">
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                            </div>
-                            <div class="col">
-                                <div class="card-body p-4">
-                                    <h6>Information</h6>
-                                    <hr class="mt-0 mb-4">
-                                    <div class="row pt-1">
-                                        <div class="col-6 mb-3">
-                                            <h6>Email</h6>
-                                            <p class="text-muted"><span id="email-goes-here"></span></p>
+                                <br><br>
+                                <h4 class="mb-2"><span id="name-goes-here"></span></h4>
+                                <div class="star-rating">
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                </div>
+                                <div class="col">
+                                    <div class="card-body p-4">
+                                        <h6>Information</h6>
+                                        <hr class="mt-0 mb-4">
+                                        <div class="row pt-1">
+                                            <div class="col-6 mb-3">
+                                                <h6>Email</h6>
+                                                <p class="text-muted"><span id="email-goes-here"></span></p>
+                                            </div>
+                                            <div class="col-6 mb-3">
+                                                <h6>Phone</h6>
+                                                <p class="text-muted"><span id="phone-goes-here">000-0000-0000</span></p>
+                                            </div>
                                         </div>
-                                        <div class="col-6 mb-3">
-                                            <h6>Phone</h6>
-                                            <p class="text-muted">123 456 789</p>
-                                        </div>
-                                    </div>
 
-                                    <hr class="mt-0 mb-4">
-                                    <div class="row pt-1">
-                                        <div class="col-6 mb-3">
-                                            <h6>City</h6>
-                                            <p class="text-muted"><span id="city-goes-here">Vancouver</span></p>
-                                        </div>
-                                        <div class="col-6 mb-3">
-                                            <h6>Favourite</h6>
-                                            <p class="text-muted"><span id="facility-goes-here">(Name of the
-                                                    facility)</span></p>
+                                        <hr class="mt-0 mb-4">
+                                        <div class="row pt-1">
+                                            <div class="col-6 mb-3">
+                                                <h6>City</h6>
+                                                <p class="text-muted"><span id="city-goes-here">Vancouver</span></p>
+                                            </div>
+                                            <div class="col-6 mb-3">
+                                                <h6>Favourite</h6>
+                                                <p class="text-muted"><span id="facility-goes-here">(Name of the
+                                                        facility)</span></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="container">
-                                <h1>User Profile </h1>
-                                <form>
-                                    <fieldset class="mb-3" id="personalInfoFields" disabled>
-                                        <div class="form-group">
-                                            <label>Name</label>
-                                            <input type="text" id="nameInput" class="form-control"
-                                                placeholder="Enter your name">
+                                <div class="container">
+                                    <h1>User Profile </h1>
+                                    <form>
+                                        <fieldset class="mb-3" id="personalInfoFields" disabled>
+                                            <div class="form-group">
+                                                <label>Name</label>
+                                                <input type="text" id="nameInput" class="form-control"
+                                                    placeholder="Enter your name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Phone</label>
+                                                <input type="text" id="phoneInput" class="form-control"
+                                                    placeholder="Enter your Phone number">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>City</label>
+                                                <input type="text" id="cityInput" class="form-control"
+                                                    placeholder="Enter your city">
+                                            </div>
+                                        </fieldset>
+                                        <div class="d-flex justify-content-end mt-5">
+                                            <button type="button" class="btn btn-secondary"
+                                                onclick="editUserInfo()">Edit</button>
+                                            <span style="width: 10px"></span>
+                                            <button type="button" class="btn btn-info"
+                                                onclick="saveUserInfo()">Save</button>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Phone</label>
-                                            <input type="text" id="phoneInput" class="form-control"
-                                                placeholder="Enter your Phone number">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>City</label>
-                                            <input type="text" id="cityInput" class="form-control"
-                                                placeholder="Enter your city">
-                                        </div>
-                                    </fieldset>
-                                    <div class="d-flex justify-content-end mt-5">
-                                        <button type="button" class="btn btn-secondary"
-                                            onclick="editUserInfo()">Edit</button>
-                                        <span style="width: 10px"></span>
-                                        <button type="button" class="btn btn-info"
-                                            onclick="saveUserInfo()">Save</button>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Back button -->
-                    <div class="d-flex flex-row-reverse">
-                        <a class="btn btn-outline-secondary card-href" onclick="goBack()"><span
-                                class="material-symbols-outlined">undo</span></a>
+                        <!-- Back button -->
+                        <div class="d-flex flex-row-reverse">
+                            <a class="btn btn-outline-secondary card-href" onclick="goBack()"><span
+                                    class="material-symbols-outlined">undo</span></a>
+                        </div>
                     </div>
                 </div>
             </div>

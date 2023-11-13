@@ -20,17 +20,20 @@ function getUserInfoFromAuth() {
                     // Get user information
                     userName = user.displayName;
                     userEmail = user.email;
+                    userPhone = user.phone;
                     userCity = user.city
+
                     //if the data fields are not empty, then write them in to the form.
                     if (userName != null) {
                         document.getElementById("nameInput").value = userName;
                     }
-                    if (userEmail != null) {
-                        document.getElementById("emailInput").value = userEmail;
+                    if (userPhone != null) {
+                        document.getElementById("phoneInput").value = userPhone;
                     }
                     if (userCity != null) {
                         document.getElementById("cityInput").value = userCity;
                     }
+
                     // Insert user name using JS
                     document.getElementById("name-goes-here").innerText = userName;
 
@@ -56,13 +59,13 @@ function saveUserInfo() {
     console.log('save')
     //get entered info from user
     userName = document.getElementById("nameInput").value;
-    userSchool = document.getElementById("schoolInput").value;
+    userPhone = document.getElementById("PhoneInput").value;
     userCity = document.getElementById("cityInput").value;
 
 
     currentUser.update({
         name: userName,
-        school: userSchool,
+        phone: userPhone,
         city: userCity
     })
         .then(() => {

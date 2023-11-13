@@ -3,6 +3,9 @@ function goBack() {
     window.history.back();
 }
 
+var currentUser = null;  
+
+
 function submitTime() {
     console.log('hi there')
     let alarmTime = document.getElementById('alarmtime').value;
@@ -45,22 +48,29 @@ function saveInToDatabase() {
 }
 
 function displayRemindTime() {
-    var user = firebase.auth().currentUser;
-    if (user) {
-        var userID = user.uid;
-    }
-    const userDocRef = db.collection('users').doc(userID);
-    userDocRef.get().then(function (doc) {
-        if (doc.exists) {
-            var userData = doc.data().remindTime;
-            document.getElementById('alarm-goes-here').innerHTML = userData
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            console.log(user)
+            var userID = user.uid;
+            const userDocRef = db.collection('users').doc(userID);
+
+            userDocRef.get().then(function (doc) {
+                if (doc.exists) {
+                    var userData = doc.data().remindTime;
+                    document.getElementById('alarm-goes-here').innerHTML = userData;
+                }
+            }).catch((error) => {
+                console.error('Error retrieving document:', error);
+            });
+        } else {
+            // Handle the case where no user is signed in
+            console.log("No user is signed in.");
         }
-    })
-        .catch((error) => {
-            console.error('Error retrieving document:', error);
-        });
+    });
 }
+
 function setup() {
-    displayRemindTime()
+    displayRemindTime();
 }
-$(document).ready(setup)
+
+$(document).ready(setup);

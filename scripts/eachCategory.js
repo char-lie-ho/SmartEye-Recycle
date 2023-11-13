@@ -1,5 +1,8 @@
+let params = new URL(window.location.href); //get URL of search bar
+let ID = params.searchParams.get("docID"); //get value for key "id"
+
 // Reference to the 'category' collection, then the 'paper_cardboard' subcollection
-const categoryRef = db.collection('category').doc('_______'); //use the document ID
+const categoryRef = db.collection('category').doc(ID); //use the document ID
 
 // Query the 'instruction' and 'recyclable' fields
 categoryRef.get()

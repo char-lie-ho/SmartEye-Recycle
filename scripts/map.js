@@ -43,7 +43,7 @@ function showMap() {
                         } else {
                             console.log("Coordinates not found for document with ID: " + doc.id);
                         }
-                
+
                         // Coordinates
                         event_name = doc.data().name; // Event Name
                         preview = doc.data().details; // Text Preview
@@ -55,7 +55,7 @@ function showMap() {
                         features.push({
                             'type': 'Feature',
                             'properties': {
-                                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/hike.html?id=${doc.id}" target="_blank" title="Opens in a new window">Read more</a>`
+                                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/hike.html?id=${doc.id}" target="_blank" title="Opens in a new window"></a>`
                             },
                             'geometry': {
                                 'type': 'Point',

@@ -87,20 +87,27 @@ function startScanner() {
     // Add the barcode to the history array
     barcodeHistory.push(barcode);
 
-    // Keep only the last 20 entries in the history array
-    if (barcodeHistory.length > 20) {
+    // Keep only the last 50 entries in the history array
+    if (barcodeHistory.length > 50) {
       barcodeHistory.shift(); // Remove the oldest entry
     }
 
-    // Check if the last 20 barcodes are the same
-    if (areLast20BarcodesSame()) {
-      console.log("Last 20 barcodes are the same:", barcodeHistory[0]);
-      document.getElementById('result').textContent = barcodeHistory[0]
+    // Check if the last 50 barcodes are the same
+    if (areLast50BarcodesSame()) {
+      console.log("Last 50 barcodes are the same:", barcodeHistory[0]);
+      document.getElementById('result').textContent = 'Your barcode is ' + barcodeHistory[0]
     }
   });
 
+  // This line is added so that each time restart clicked, the result div can be emptied 
+  // Clear the inner text of the result div
+  document.getElementById('result').textContent = ""
+
+
   function stopScanning() {
-    console.log('stop')
+    // Clear the inner text of the result div
+    document.getElementById('result').textContent = ""
+
     if (_scannerIsRunning) {
       Quagga.stop();
       _scannerIsRunning = false;
@@ -119,13 +126,14 @@ function startScanner() {
 startScanner()
 
 
-// Check if the last 20 barcodes are the same
-function areLast20BarcodesSame() {
+// Check if the last 50 barcodes are the same
+function areLast50BarcodesSame() {
   // Check if all elements in the array are the same
   return barcodeHistory.every(function (value) {
     return value === barcodeHistory[0];
   });
 }
+
 
 // take the user back to the previous page
 function goBack() {

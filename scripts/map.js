@@ -54,10 +54,49 @@ function showMap() {
                             },
                             'geometry': {
                                 'type': 'Point',
-                                'coordinates': coordinates
+                                'coordinates': [-123.10453053612734, 49.265045179724105]
                             }
+
+                        });
+
+                        features.push({
+                            'type': 'Feature',
+                            'properties': {
+                                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/hike.html?id=${doc.id}" target="_blank" title="Opens in a new window">Read more</a>`
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-123.1150316952136, 49.208455411383746]
+                            }
+
+                        });
+
+                        features.push({
+                            'type': 'Feature',
+                            'properties': {
+                                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/hike.html?id=${doc.id}" target="_blank" title="Opens in a new window">Read more</a>`
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-123.12720286039796, 49.27414676627348]
+                            }
+
+                        });
+
+                        features.push({
+                            'type': 'Feature',
+                            'properties': {
+                                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/hike.html?id=${doc.id}" target="_blank" title="Opens in a new window">Read more</a>`
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-123.08265737399753, 49.27068396993551]
+                            }
+
                         });
                     });
+
+
 
                     // Adds features as a source of data for the map
                     map.addSource('places', {

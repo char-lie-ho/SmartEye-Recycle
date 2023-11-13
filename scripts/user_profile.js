@@ -59,7 +59,7 @@ function saveUserInfo() {
     console.log('save')
     //get entered info from user
     userName = document.getElementById("nameInput").value;
-    userPhone = document.getElementById("PhoneInput").value;
+    userPhone = document.getElementById("phoneInput").value;
     userCity = document.getElementById("cityInput").value;
 
 

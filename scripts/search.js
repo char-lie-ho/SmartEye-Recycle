@@ -28,3 +28,10 @@ function displayCardsDynamically(collection) {
 }
 
 displayCardsDynamically("category");  //input param is the name of the collection
+
+//search function
+
+function search() {
+    searchText = document.getElementById("searchText").innerText;
+    console.log(searchText)
+}

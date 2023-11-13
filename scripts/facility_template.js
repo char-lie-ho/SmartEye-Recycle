@@ -1,8 +1,9 @@
 function displayFacilityInfo() {
     let params = new URL(window.location.href); //get URL of search bar
     let ID = params.searchParams.get("docID"); //get value for key "id"
+    let title = null
     localStorage.setItem('facilityID', ID); // save the facility id to local storage
-    console.log(ID);
+    // console.log(ID);
     
     //retrieve information from database
     db.collection("facility")
@@ -14,7 +15,7 @@ function displayFacilityInfo() {
             var operation = doc.data().hours_of_operation;
             var facilityID = doc.id;
             var image_url = doc.data().image;
-            console.log(title)
+            // console.log(title)
             // only populate title, and image
             document.getElementById("facility_name").innerText = title;
             document.querySelector('.card-address').innerHTML = address;
@@ -26,10 +27,17 @@ function displayFacilityInfo() {
             document.getElementById("day6").innerText = operation[5];
             document.getElementById("day7").innerText = operation[6];
             document.querySelector('.card-image').src = image_url
-
+                   
+            //replace whitespace with + sign 
+            queryParams = doc.data().name.replace(/\s+/g, '+')
+            
+            //dynamically search direction using google map
+            document.getElementById('direction').href += queryParams;
         });
 }
 displayFacilityInfo();
+
+
 
 
 // take the user back to the previous page

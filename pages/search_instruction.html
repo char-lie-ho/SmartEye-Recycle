@@ -40,10 +40,10 @@
 <body>
     <!-- nav bar -->
     <nav id="navbarPlaceholder"></nav>
-
     <div class="container py-5 px-5">
         <div class="row py-4">
             <div class="col-12 col-md-8 col-lg-6 mx-auto">
+                <!-- search prompt -->
                 <div class="small fw-light">search input with icon</div>
                 <div class="input-group">
                     <input class="form-control border-end-0 border rounded-pill" type="search" value="search"
@@ -56,73 +56,23 @@
                         </button>
                     </span>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-md-6 py-3 px-4">
-                        <a href="./category_template.html">
-                            <div class="card bg-white text-black">
-                                <img src="../images/Plastic_bottles_and_containers.jpg" class="card-img"
-                                    alt="category image" height="200px">
-                                <div class="card-img-overlay">
-                                    <h5 class="card-title">Plastic Bottles & Containers</h5>
+
+                <!-- each categories -->
+                <div class="row" id="categories-goes-here">
+                    <!-- template -->
+                    <template id="eachCategoriesTemplate">
+                        <div class="col-12 col-md-6 py-3 px-4">
+                            <a href="./category_template.html">
+                                <div class="card bg-white text-black">
+                                    <img src="../images/plastic_bags_and_overwrap.jpg" class="card-img"
+                                        alt="category image" height="200px">
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">Plastic Bags & Overwrap</h5>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-12 col-md-6 py-3 px-4">
-                        <a href="./category_template.html">
-                            <div class="card bg-white text-black">
-                                <img src="../images/paper_cardboard.jpg" class="card-img" alt="category image"
-                                    height="200px">
-                                <div class="card-img-overlay">
-                                    <h5 class="card-title">Paper & Cardboard</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-12 col-md-6 py-3 px-4">
-                        <a href="./category_template.html">
-                            <div class="card bg-white text-black">
-                                <img src="../images/glass_bottles_and_container.jpg" class="card-img"
-                                    alt="category image" height="200px">
-                                <div class="card-img-overlay">
-                                    <h5 class="card-title">Glass Bottles & Containers</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-12 col-md-6 py-3 px-4">
-                        <a href="./category_template.html">
-                            <div class="card bg-white text-black">
-                                <img src="../images/foam_packaging.jpg" class="card-img" alt="category image"
-                                    height="200px">
-                                <div class="card-img-overlay">
-                                    <h5 class="card-title">Foam Packaging</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-12 col-md-6 py-3 px-4">
-                        <a href="./category_template.html">
-                            <div class="card bg-white text-black">
-                                <img src="../images/aluminum_foil.jpg" class="card-img" alt="category image"
-                                    height="200px">
-                                <div class="card-img-overlay">
-                                    <h5 class="card-title">Aluminum Foil</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-12 col-md-6 py-3 px-4">
-                        <a href="./category_template.html">
-                            <div class="card bg-white text-black">
-                                <img src="../images/plastic_bags_and_overwrap.jpg" class="card-img" alt="category image"
-                                    height="200px">
-                                <div class="card-img-overlay">
-                                    <h5 class="card-title">Plastic Bags & Overwrap</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    </template>
                 </div>
                 <!-- Back button -->
                 <div class="d-flex flex-row-reverse">

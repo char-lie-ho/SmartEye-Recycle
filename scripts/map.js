@@ -131,7 +131,7 @@ function showMap() {
                 // Adds user's current location as a source to the map
                 navigator.geolocation.getCurrentPosition(position => {
                     const userLocation = [position.coords.longitude, position.coords.latitude];
-                    console.log(userLocation);
+                    // console.log(userLocation);
                     if (userLocation) {
                         map.addSource('userLocation', {
                             'type': 'geojson',
@@ -193,3 +193,17 @@ function showMap() {
 
 // Call the function to display the map with the user's location and event pins
 showMap();
+
+db.collection("facility").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        var facility = doc.data();
+        var coordinates = facility.coordinates;
+        console.log(coordinates)
+    });
+});
+
+
+// take the user back to the previous page
+function goBack() {
+    window.history.back();
+}

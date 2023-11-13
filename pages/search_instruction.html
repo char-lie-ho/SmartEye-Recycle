@@ -26,7 +26,7 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- <script src="\scripts\firebaseAPI_smart_eye.js"></script> -->
-    
+
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Link to styles of your own -->
@@ -52,20 +52,16 @@
                         <button class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5"
                             type="button">
                             <i class="bi bi-search"></i>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                            </svg>
+                            <span class="material-symbols-outlined">search</span>
                         </button>
                     </span>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6 py-3 px-4">
-                        <a href="./category_search.html">
+                        <a href="./category_template.html">
                             <div class="card bg-white text-black">
-                                    <img src="../images/Plastic_bottles_and_containers.jpg" class="card-img"
-                                        alt="category image" height="200px">
+                                <img src="../images/Plastic_bottles_and_containers.jpg" class="card-img"
+                                    alt="category image" height="200px">
                                 <div class="card-img-overlay">
                                     <h5 class="card-title">Plastic Bottles & Containers</h5>
                                 </div>
@@ -73,7 +69,7 @@
                         </a>
                     </div>
                     <div class="col-12 col-md-6 py-3 px-4">
-                        <a href="./category_search.html">
+                        <a href="./category_template.html">
                             <div class="card bg-white text-black">
                                 <img src="../images/paper_cardboard.jpg" class="card-img" alt="category image"
                                     height="200px">
@@ -84,10 +80,10 @@
                         </a>
                     </div>
                     <div class="col-12 col-md-6 py-3 px-4">
-                        <a href="./category_search.html">
+                        <a href="./category_template.html">
                             <div class="card bg-white text-black">
-                                <img src="../images/glass_bottles_and_container.jpg" class="card-img" alt="category image"
-                                    height="200px">
+                                <img src="../images/glass_bottles_and_container.jpg" class="card-img"
+                                    alt="category image" height="200px">
                                 <div class="card-img-overlay">
                                     <h5 class="card-title">Glass Bottles & Containers</h5>
                                 </div>
@@ -95,7 +91,7 @@
                         </a>
                     </div>
                     <div class="col-12 col-md-6 py-3 px-4">
-                        <a href="./category_search.html">
+                        <a href="./category_template.html">
                             <div class="card bg-white text-black">
                                 <img src="../images/foam_packaging.jpg" class="card-img" alt="category image"
                                     height="200px">
@@ -106,9 +102,10 @@
                         </a>
                     </div>
                     <div class="col-12 col-md-6 py-3 px-4">
-                        <a href="./category_search.html">
+                        <a href="./category_template.html">
                             <div class="card bg-white text-black">
-                                <img src="../images/aluminum_foil.jpg" class="card-img" alt="category image" height="200px">
+                                <img src="../images/aluminum_foil.jpg" class="card-img" alt="category image"
+                                    height="200px">
                                 <div class="card-img-overlay">
                                     <h5 class="card-title">Aluminum Foil</h5>
                                 </div>
@@ -116,7 +113,7 @@
                         </a>
                     </div>
                     <div class="col-12 col-md-6 py-3 px-4">
-                        <a href="./category_search.html">
+                        <a href="./category_template.html">
                             <div class="card bg-white text-black">
                                 <img src="../images/plastic_bags_and_overwrap.jpg" class="card-img" alt="category image"
                                     height="200px">
@@ -126,6 +123,11 @@
                             </div>
                         </a>
                     </div>
+                </div>
+                <!-- Back button -->
+                <div class="d-flex flex-row-reverse">
+                    <a class="btn btn-outline-secondary card-href" onclick="goBack()"><span
+                            class="material-symbols-outlined">undo</span></a>
                 </div>
             </div>
 
@@ -144,10 +146,10 @@
     <!-- Link to scripts of your own -->
     <script src="../scripts/firebaseAPI_smart_eye.js"></script>
     <script src="../scripts/skeleton.js"></script>
+    <script src="../scripts/search.js"></script>
 
     <!-- <script src="./scripts/script.js"></script> -->
 
 </body>
-<script src="../scripts/guide_line.js"></script>
 
 </html>

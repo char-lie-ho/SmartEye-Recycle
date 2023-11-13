@@ -29,7 +29,7 @@ function displayCardsDynamically(collection) {
 
 displayCardsDynamically("category");  //input param is the name of the collection
 
-//search function
+// search function, read the search prompt
 
 function search() {
     // get the input element by its ID

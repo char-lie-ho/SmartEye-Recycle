@@ -27,7 +27,7 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- <script src="\scripts\firebaseAPI_smart_eye.js"></script> -->
     <!-- Link to scripts of your own -->
-    
+
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -64,35 +64,42 @@
     </div>
     <!--Xinli Wang - Cards and Call to action-->
     <div class="container card-group">
-        <div class="row justify-content-evenly">
-            <div class="col-md-3 mb-3 card">
+        <!-- Barcode reader -->
+        <div class="col-lg-4 mb-3">
+            <a href="camera.html" class="card btn btn-success">
                 <img src="../images/barcode-scan.svg" class="card-img-top" alt="">
                 <div class="card-body">
                     <h5 class="card-title">Barcode reader</h5>
                     <p class="card-text">Active your camera to scan the barcode attached on the items to find how you
                         can recycle it.</p>
-                    <a type="button" class="btn btn-success" href="camera.html">Try it now</a>
+                    <!-- <a type="button" class="btn btn-success" href="camera.html">Try it now</a> -->
                 </div>
-            </div>
-            <div class="col-md-3 mb-3 card">
+            </a>
+        </div>
+        <!-- Search Instruction -->
+        <div class="col-lg-4 mb-3">
+            <a href="search_instruction.html" class="card btn btn-success">
                 <img src="../images/book-open-page-variant-outline.svg" class="card-img-top" alt="">
                 <div class="card-body">
                     <h5 class="card-title">Search Instruction</h5>
                     <p class="card-text">Use our grab-and-to-go guidelines to quickly look for category what you can
                         recycle.</p>
-                    <a type="button" class="btn btn-success" href="search_instruction.html">Try it now</a>
                 </div>
-            </div>
-            <div class="col-md-3 mb-3 card">
-                <img src="../images/map-search-outline.svg" class="card-img-top" alt="">
+            </a>
+        </div>
+        <!-- Nearby facility -->
+        <div class="col-lg-4 mb-3">
+            <a href="neaby_facility.html" class="card btn btn-success">
+                <img src="../images/map-search-outline.svg" class="card-img-top" alt="" id="mainCardImage">
                 <div class="card-body">
                     <h5 class="card-title">Nearby facilities</h5>
-                    <p class="card-text">Effortlessly and efficiently locate the nearest recycling facilities in your
+                    <p class="card-text">Effortlessly and efficiently locate the nearest recycling facilities in
+                        your
                         area.</p>
-                    <a type="button" class="btn btn-success" href="neaby_facility.html">Try it now</a>
                 </div>
-            </div>
+            </a>
         </div>
+    </div>
     </div>
 
     <!-- Footer -->

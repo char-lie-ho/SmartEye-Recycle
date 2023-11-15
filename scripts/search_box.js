@@ -21,4 +21,6 @@ categoryRef.where('items', 'array-contains', keywords)
         });
     })
 
-
+function goBack() {
+    window.history.back();
+}

@@ -36,3 +36,11 @@ function saveSearchandRedirect() {
     console.log(keywords);
     window.location.href = 'category_search_by_words.html';
 }
+
+// to make user to hit enter to search
+function searchOnEnter(event) {
+    // Check if the pressed key is Enter (key code 13)
+    if (event.keyCode === 13) {
+        saveSearchandRedirect();
+    }
+}

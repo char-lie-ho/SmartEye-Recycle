@@ -1,0 +1,11 @@
+/* Position the button at the right and lower side of the image */
+.image-container {
+    width: 100px;
+    /* Adjust the width of the image container */
+}
+
+.add-photo-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

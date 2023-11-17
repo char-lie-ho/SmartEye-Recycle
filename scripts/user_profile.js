@@ -60,7 +60,9 @@ getUserInfoFromAuth(); // Run the function
 function editUserInfo() {
     //Enable the form fields
     document.getElementById('personalInfoFields').disabled = false;
-    document.getElementById('editProfile').style.display = "block"
+    document.getElementById('editProfile').style.display = "block";
+    //Auto scroll down to the edit form
+    document.getElementById('editProfile').scrollIntoView({ behavior: 'smooth' })
 }
 
 function saveUserInfo() {

@@ -60,6 +60,7 @@ getUserInfoFromAuth(); // Run the function
 function editUserInfo() {
     //Enable the form fields
     document.getElementById('personalInfoFields').disabled = false;
+    document.getElementById('editProfile').style.display = "block"
 }
 
 function saveUserInfo() {
@@ -79,6 +80,7 @@ function saveUserInfo() {
         })
 
     document.getElementById('personalInfoFields').disabled = true;
+    document.getElementById('editProfile').style.display = "none"
 }
 
 

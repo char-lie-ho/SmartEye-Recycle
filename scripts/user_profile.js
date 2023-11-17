@@ -83,6 +83,8 @@ function saveUserInfo() {
 
     document.getElementById('personalInfoFields').disabled = true;
     document.getElementById('editProfile').style.display = "none"
+    //Auto scroll up to the top
+    document.getElementById('navbarPlaceholder').scrollIntoView({ behavior: 'smooth' })
 }
 
 

@@ -6,9 +6,9 @@ function goBack() {
 // read from database
 function displayCardsDynamically(collection) {
     // Retrieve the HTML element with the ID "eachCategoriesTemplate" and store it in the cardTemplate variable.
-    let cardTemplate = document.getElementById("eachCategoriesTemplate"); 
+    let cardTemplate = document.getElementById("eachCategoriesTemplate");
 
-    db.collection(collection).get()   
+    db.collection(collection).get()
         .then(allCategories => {
             allCategories.forEach(doc => { //iterate thru each doc
                 var title = doc.data().categoryDocID;       // get value of the "name" key
@@ -30,11 +30,27 @@ function displayCardsDynamically(collection) {
 displayCardsDynamically("category");  //input param is the name of the collection
 
 function saveSearchandRedirect() {
-
     var keywords = document.getElementById("searchText").value;
     localStorage.setItem("keywords", keywords)
     console.log(keywords);
-    window.location.href = 'category_search_by_words.html';
+    // window.location.href = 'category_search_by_words.html';
+
+    //obtain the document name inside category from database
+    const categoryRef = db.collection('category');
+    categoryRef.where('items', 'array-contains', keywords)
+        .get()
+        .then((querySnapshot) => {
+            // if the query result is not empty, a matching document was found
+            if (!querySnapshot.empty) {
+                querySnapshot.forEach((doc) => {
+                    // Retrieve the name of the document
+                    var category = doc.id;
+                    window.location.href = `category_template.html?docID=${category}`
+                });
+            } else {
+                alert('Sorry, Not found!');
+            }
+        })
 }
 
 // to make user to hit enter to search

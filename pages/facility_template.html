@@ -46,7 +46,7 @@
         <div class="row align-items-center g-5 py-5">
             <div id="facilityTemplate" class="col-md-6">
                 <div class="card py-2 mx-2">
-                    <img class="card-image card-img-top" src=" ..." alt="..." style="max-height: 400px;">
+                    <img class="card-image card-img-top" src="..." alt="..." style="max-height: 400px;">
                     <div class="card-body">
                         <h5 class="card-title"><span id="facility_name"></span></h5>
                         <br>
@@ -85,13 +85,9 @@
                     <!-- Reviews -->
                     <div class="container px-4 py-5" id="featured-3">
                         <h2 class="pb-2 border-bottom">Reviews:</h2>
-                        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-                            <div class="feature col">
-                                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3" id="rating-goes-here">
-                                </div>
-                                <h3 class="fs-2 text-body-emphasis" id="users-name-goes-here"></h3>
-                                <p id="review-content-goes-here"></p>
-                                <p id="update-time-goes-here"></p>
+                        <div class="row g-4 row-cols-1 row-cols-lg-3">
+                            <div class="feature col" id="reviewGroup">
+                                <!-- review cards -->
                             </div>
                         </div>
                     </div>
@@ -102,6 +98,21 @@
 
     </div>
     </div>
+
+    <template id="reviewTemplate">
+        <div class="reviewRow">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-1 mb-3 rating-goes-here">
+            </div>
+            <h3 class="fs-2 text-body-emphasis users-name-goes-here"></h3>
+            <p class="review-content-goes-here"></p>
+            <p class="facility-accept-goes-here"></p>
+            <p class="waiting-time-goes-here"></p>
+            <p class="cleanliness-goes-here"></p>
+            <p class="recommend-goes-here"></p>
+            <p class="update-time-goes-here"></p>
+        </div>
+        
+    </template>
     <!------------------------------->
 
     <!-- Footer -->
@@ -113,7 +124,6 @@
 
     <!-- Link to scripts of your own -->
     <script src="../scripts/firebaseAPI_smart_eye.js"></script>
-    <script src="../scripts/skeleton.js"></script>
     <script src="../scripts/skeleton.js"></script>
     <script src="../scripts/facility_template.js"></script>
     <!-- <script src="./scripts/script.js"></script> -->

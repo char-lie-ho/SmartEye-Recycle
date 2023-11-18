@@ -81,8 +81,15 @@ function displayReviewInfo() {
                 }
                 reviewCard.querySelector('.rating-goes-here').innerHTML = `Rate: ${starRating}`;
                 reviewCard.querySelector('.users-name-goes-here').innerHTML = userName;
-                reviewCard.querySelector('.review-content-goes-here').innerHTML = `Comment: ${comment}`;
-                reviewCard.querySelector('.facility-accept-goes-here').innerHTML = `Accept: ${content};`
+
+                if (comment != '') { 
+                    reviewCard.querySelector('.review-content-goes-here').innerHTML = `Comment: ${comment}`; 
+                };
+                
+                if (content!=''){
+                    reviewCard.querySelector('.facility-accept-goes-here').innerHTML = `Accept: <span>${content}</span>`;
+                }    
+                    
                 reviewCard.querySelector('.waiting-time-goes-here').innerHTML = `Waiting time: ${waitingTime} minutes`;
                 reviewCard.querySelector('.cleanliness-goes-here').innerHTML = `Cleanliness: ${cleanliness}`;
                 reviewCard.querySelector('.recommend-goes-here').innerHTML = `Recommend: ${recommend}`;
@@ -90,7 +97,6 @@ function displayReviewInfo() {
 
                 //Append template to Review section
                 reviewCardGroup.appendChild(reviewCard);
-
 
             })
 

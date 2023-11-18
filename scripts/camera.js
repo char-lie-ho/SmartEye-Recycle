@@ -95,7 +95,8 @@ function startScanner() {
     // Check if the last 50 barcodes are the same
     if (areLast50BarcodesSame()) {
       console.log("Last 50 barcodes are the same:", barcodeHistory[0]);
-      document.getElementById('result').textContent = 'Your barcode is ' + barcodeHistory[0]
+      document.getElementById('result').textContent = 'Your barcode is ' + barcodeHistory[0];
+      document.getElementById('go').style.display = 'inline'
     }
   });
 
@@ -120,7 +121,10 @@ function startScanner() {
   //pause scanning
   document.getElementById('stopButton').addEventListener('click', stopScanning);
   //restart scanning
-  document.getElementById('restartButton').addEventListener('click', startScanner);
+  document.getElementById('restartButton').addEventListener('click',() => {
+    // Refresh the page when the button is clicked
+    location.reload();
+  });
 }
 
 startScanner()

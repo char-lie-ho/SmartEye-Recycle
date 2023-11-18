@@ -79,15 +79,19 @@ function displayReviewInfo() {
                         starRating += '<span class="material-icons">star_outline</span>';
                     }
                 }
-                reviewCard.querySelector('.rating-goes-here').innerHTML = `Rate: ${starRating}`;
+                reviewCard.querySelector('.rating-goes-here').innerHTML = `Rating: ${starRating}`;
                 reviewCard.querySelector('.users-name-goes-here').innerHTML = userName;
 
                 if (comment != '') { 
                     reviewCard.querySelector('.review-content-goes-here').innerHTML = `Comment: ${comment}`; 
                 };
-                
+
+                // Materials Handle
                 if (content!=''){
-                    reviewCard.querySelector('.facility-accept-goes-here').innerHTML = `Accept: <span>${content}</span>`;
+                    content.forEach((item)=>{
+                        // console.log(item)
+                        reviewCard.querySelector('.facility-accept-goes-here').innerHTML += `<li>${item}</li>`;
+                    })
                 }    
                     
                 reviewCard.querySelector('.waiting-time-goes-here').innerHTML = `Waiting time: ${waitingTime} minutes`;

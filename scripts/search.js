@@ -5,9 +5,10 @@ function goBack() {
 
 // read from database
 function displayCardsDynamically(collection) {
-    let cardTemplate = document.getElementById("eachCategoriesTemplate"); // Retrieve the HTML element with the ID "hikeCardTemplate" and store it in the cardTemplate variable. 
+    // Retrieve the HTML element with the ID "eachCategoriesTemplate" and store it in the cardTemplate variable.
+    let cardTemplate = document.getElementById("eachCategoriesTemplate"); 
 
-    db.collection(collection).get()   //the collection called "hikes"
+    db.collection(collection).get()   
         .then(allCategories => {
             allCategories.forEach(doc => { //iterate thru each doc
                 var title = doc.data().categoryDocID;       // get value of the "name" key
@@ -19,7 +20,6 @@ function displayCardsDynamically(collection) {
                 newcard.querySelector('.card-img').src = `../images/${imageCode}.jpg`; //Example: NV01.jpg
                 newcard.querySelector('a').href = "category_template.html?docID=" + docID;
                 // console.log(title)
-                //attach to gallery, Example: "hikes-go-here"
                 document.getElementById("categories-goes-here").appendChild(newcard);
 
                 //i++;   //Optional: iterate variable to serve as unique ID

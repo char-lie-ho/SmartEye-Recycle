@@ -40,7 +40,7 @@ displayFacilityInfo()
 function displayReviewInfo() {
     let params = new URL(window.location.href); //get URL of search bar
     let ID = params.searchParams.get("docID");
-    console.log(ID);
+    // console.log(ID);
 
     //prepare cards to clone and add content
     let reviewCardGroup = document.getElementById("reviewGroup");
@@ -51,7 +51,7 @@ function displayReviewInfo() {
         .get()
         .then((allReviews) => {
             review = allReviews.docs;
-            console.log(review);
+            // console.log(review);
             review.forEach((doc) => {
                 var rate = doc.data().overallRating;
                 var userName = "anonymous";
@@ -79,24 +79,36 @@ function displayReviewInfo() {
                         starRating += '<span class="material-icons">star_outline</span>';
                     }
                 }
+                // Rating
                 reviewCard.querySelector('.rating-goes-here').innerHTML = `Rating: ${starRating}`;
+
+                // User name
                 reviewCard.querySelector('.users-name-goes-here').innerHTML = userName;
 
-                if (comment != '') { 
-                    reviewCard.querySelector('.review-content-goes-here').innerHTML = `Comment: ${comment}`; 
+                // Comment
+                if (comment != '') {
+                    reviewCard.querySelector('.review-comment-goes-here').innerHTML = `Comment: ${comment}`;
                 };
 
                 // Materials Handle
-                if (content!=''){
-                    content.forEach((item)=>{
+                if (content != '') {
+                    content.forEach((item) => {
                         // console.log(item)
                         reviewCard.querySelector('.facility-accept-goes-here').innerHTML += `<li>${item}</li>`;
                     })
-                }    
-                    
+                }
+                // Waiting time
                 reviewCard.querySelector('.waiting-time-goes-here').innerHTML = `Waiting time: ${waitingTime} minutes`;
+
+                // Cleanliness
                 reviewCard.querySelector('.cleanliness-goes-here').innerHTML = `Cleanliness: ${cleanliness}`;
-                reviewCard.querySelector('.recommend-goes-here').innerHTML = `Recommend: ${recommend}`;
+
+                // Recommend
+                if (recommend != 'unSure') {
+                    reviewCard.querySelector('.recommend-goes-here').innerHTML = `Recommend: ${recommend}`;
+                }
+
+                // Update Time
                 reviewCard.querySelector('.update-time-goes-here').innerHTML = new Date(time).toLocaleString();
 
                 //Append template to Review section

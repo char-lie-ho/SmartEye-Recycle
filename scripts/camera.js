@@ -134,14 +134,14 @@ function areLast50BarcodesSame() {
   });
 }
 
-//Based on the barcode, alter the href inside go
-var goButton = document.getElementById('go');
 
+// Go button
+// Alter the href inside go based on the barcode
 // Add a click event listener to the button
-goButton.addEventListener('click', function () {
-  // Change the href attribute when the button is clicked
-  goButton.setAttribute('href', `post_scan.html?${barcodeHistory[0]}`);
-});
+document.getElementById('go').addEventListener('click', function () {
+    document.getElementById('go')
+    .setAttribute('href', `post_scan.html?${barcodeHistory[0]}`);
+  });
 
 
 // take the user back to the previous page

@@ -4,7 +4,7 @@ function displayFacilityInfo() {
     let title = null
     localStorage.setItem('facilityID', ID); // save the facility id to local storage
     // console.log(ID);
-    
+
     //retrieve information from database
     db.collection("facility")
         .doc(ID)
@@ -27,20 +27,46 @@ function displayFacilityInfo() {
             document.getElementById("day6").innerText = operation[5];
             document.getElementById("day7").innerText = operation[6];
             document.querySelector('.card-image').src = image_url
-                   
+
             //replace whitespace with + sign 
             queryParams = doc.data().name.replace(/\s+/g, '+')
-            
+
             //dynamically search direction using google map
             document.getElementById('direction').href += queryParams;
         });
 }
 displayFacilityInfo();
 
+function displayReviewInfo() {
+    let params = new URL(window.location.href); //get URL of search bar
+    let ID = params.searchParams.get("docID");
+    console.log(ID);
+
+    db.collection("reviews")
+        .where("facilityID", "==", ID)
+        .get()
+        .then((allReviews) => {
+            review = allReviews.docs;
+            console.log(review);
+            review.forEach((doc) =>{
+                var rate = doc.data().overallRating;
+                var userName = "anonymous";
+                var comment = doc.data().comment;
+                var content = doc.data().materialsHandle;
+                var waitingTime = doc.data().waitingTime;
+                var time = doc.data().last_updated.toDate();
+                var recommend = doc.data().recommended;
+
+            })
+
+        })
+}
+displayReviewInfo()
+
 
 
 
 // take the user back to the previous page
 function goBack() {
-    window.history.back();
-}
+                window.history.back();
+            }

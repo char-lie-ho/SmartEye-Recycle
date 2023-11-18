@@ -9,3 +9,11 @@
     bottom: 0;
     right: 0;
 }
+#closeIcon{
+    border: solid 1px;
+    background-color: white;
+    border-radius: 5px;
+    display: block;
+    width: 20px;
+    text-align: center;
+}

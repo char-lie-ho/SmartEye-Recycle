@@ -32,72 +32,64 @@ function showMap() {
                 // READING information from "hikes" collection in Firestore
                 db.collection('facility').get().then(allFacilities => {
                     const features = []; // Defines an empty array for information to be added to
+
                     allFacilities.forEach(doc => {
                         var facility = doc.data();
+                        console.log(facility);
                         if (facility.coordinates) {
                             // Access the latitude and longitude values
                             var latitude = facility.coordinates.latitude;
                             var longitude = facility.coordinates.longitude;
                             // Log the coordinates
-                            console.log("Latitude: " + latitude + ", Longitude: " + longitude);
+                            console.log("Latitude: " + latitude + ", Longitude: " + longitude + doc.id);
                         } else {
                             console.log("Coordinates not found for document with ID: " + doc.id);
                         }
 
                         // Coordinates
+                        Coordinates = [doc.data().coordinates['_long'], doc.data().coordinates['_lat']];
+                        console.log(Coordinates)
+
+                        cover = doc.data().image;
                         event_name = doc.data().name; // Event Name
-                        preview = doc.data().details; // Text Preview
-                        // img = doc.data().posterurl; // Image
+                        address = doc.data().address; // Text Preview
+
+
+                
+                        openHourM = doc.data().hours_of_operation[0];
+                        openHourT = doc.data().hours_of_operation[1];
+                        openHourW = doc.data().hours_of_operation[2];
+                        openHourTh = doc.data().hours_of_operation[3];
+                        openHourF = doc.data().hours_of_operation[4];
+                        openHourSa = doc.data().hours_of_operation[5];
+                        openHourSu= doc.data().hours_of_operation[6];
+
                         // url = doc.data().link; // URL
+
 
                         // Pushes information into the features array
                         // in our application, we have a string description of the hike
                         features.push({
                             'type': 'Feature',
                             'properties': {
-                                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/hike.html?id=${doc.id}" target="_blank" title="Opens in a new window"></a>`
+                                'description': `
+                                <img src="${cover}" class="cover-img" width=220px height=100px>
+                                <strong>${event_name}</strong><p>${address}</p>
+                                <div class="OH">Open time:<br>
+                                  ${openHourM}<br>
+                                  ${openHourT}<br>
+                                  ${openHourW}<br>
+                                  ${openHourTh}<br>
+                                  ${openHourF}<br>
+                                  ${openHourSa}<br>
+                                  ${openHourSu}<br>
+                                </div>
+                                <a href="http://127.0.0.1:5500/pages/facility_template.html?docID=${doc.id}" target="_blank" title="Opens in a new window">More Info</a>`
                             },
                             'geometry': {
                                 'type': 'Point',
-                                'coordinates': [-123.10453053612734, 49.265045179724105]
+                                'coordinates': Coordinates
                             }
-
-                        });
-
-                        features.push({
-                            'type': 'Feature',
-                            'properties': {
-                                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/hike.html?id=${doc.id}" target="_blank" title="Opens in a new window">Read more</a>`
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-123.1150316952136, 49.208455411383746]
-                            }
-
-                        });
-
-                        features.push({
-                            'type': 'Feature',
-                            'properties': {
-                                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/hike.html?id=${doc.id}" target="_blank" title="Opens in a new window">Read more</a>`
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-123.12720286039796, 49.27414676627348]
-                            }
-
-                        });
-
-                        features.push({
-                            'type': 'Feature',
-                            'properties': {
-                                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/hike.html?id=${doc.id}" target="_blank" title="Opens in a new window">Read more</a>`
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-123.08265737399753, 49.27068396993551]
-                            }
-
                         });
                     });
 
@@ -233,10 +225,15 @@ function showMap() {
             }
         );
     });
+    addPostPins(map);
 }
 
 // Call the function to display the map with the user's location and event pins
 showMap();
+
+function addPostPins(map) {
+
+}
 
 // take the user back to the previous page
 function goBack() {

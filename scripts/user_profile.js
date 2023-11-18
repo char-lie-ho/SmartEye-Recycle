@@ -87,6 +87,36 @@ function saveUserInfo() {
     document.getElementById('navbarPlaceholder').scrollIntoView({ behavior: 'smooth' })
 }
 
+// upload profile
+
+const uploadButton = document.getElementById('uploadButton');
+const uploadPopup = document.getElementById('uploadPopup');
+const imageInput = document.getElementById('imageInput');
+
+uploadButton.addEventListener('click', openPopup);
+
+function openPopup() {
+    uploadPopup.style.display = 'block';
+}
+
+function closePopup() {
+    uploadPopup.style.display = 'none';
+}
+
+function uploadImage() {
+    const selectedFile = imageInput.files[0];
+
+    if (selectedFile) {
+        // Handle the upload logic, e.g., send the file to a server or perform other operations
+        console.log('File uploaded:', selectedFile.name);
+        
+        // Close the popup after handling the upload
+        closePopup();
+    } else {
+        alert('Please select an image file.');
+    }
+}
+
 
 // take the user back to the previous page
 function goBack() {

@@ -92,6 +92,7 @@ function saveUserInfo() {
 const uploadButton = document.getElementById('uploadButton');
 const uploadPopup = document.getElementById('uploadPopup');
 const imageInput = document.getElementById('imageInput');
+const imgSrc = document.getElementById('mypic-goes-here');
 
 uploadButton.addEventListener('click', openPopup);
 
@@ -104,17 +105,20 @@ function closePopup() {
 }
 
 function uploadImage() {
-    const selectedFile = imageInput.files[0];
+    const selectedFile = imageInput.files[0]; //get and store the uploaded img into this const
+
 
     if (selectedFile) {
         // Handle the upload logic, e.g., send the file to a server or perform other operations
         console.log('File uploaded:', selectedFile.name);
+        var blob = URL.createObjectURL(selectedFile);
+        console.log(blob);
+        imgSrc.src=blob;
         
-        // Close the popup after handling the upload
         closePopup();
     } else {
-        alert('Please select an image file.');
-    }
+        alert('Please select an image file.');    }
+
 }
 
 

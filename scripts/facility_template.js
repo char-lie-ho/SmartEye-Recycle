@@ -15,7 +15,7 @@ function displayFacilityInfo() {
             var operation = doc.data().hours_of_operation;
             var facilityID = doc.id;
             var image_url = doc.data().image;
-            // console.log(title)
+            // console.log(image_url)
             // only populate title, and image
             document.getElementById("facility_name").innerText = title;
             document.querySelector('.card-address').innerHTML = address;
@@ -26,7 +26,7 @@ function displayFacilityInfo() {
             document.getElementById("day5").innerText = operation[4];
             document.getElementById("day6").innerText = operation[5];
             document.getElementById("day7").innerText = operation[6];
-            document.querySelector('.card-image').src = image_url
+            document.querySelector('.card-image').src = image_url;
 
             //replace whitespace with + sign 
             queryParams = doc.data().name.replace(/\s+/g, '+')
@@ -35,12 +35,16 @@ function displayFacilityInfo() {
             document.getElementById('direction').href += queryParams;
         });
 }
-displayFacilityInfo();
+displayFacilityInfo()
 
 function displayReviewInfo() {
     let params = new URL(window.location.href); //get URL of search bar
     let ID = params.searchParams.get("docID");
     console.log(ID);
+
+    //prepare cards to clone and add content
+    let reviewCardGroup = document.getElementById("reviewGroup");
+    let reviewTemplate = document.getElementById("reviewTemplate");
 
     db.collection("reviews")
         .where("facilityID", "==", ID)
@@ -48,14 +52,45 @@ function displayReviewInfo() {
         .then((allReviews) => {
             review = allReviews.docs;
             console.log(review);
-            review.forEach((doc) =>{
+            review.forEach((doc) => {
                 var rate = doc.data().overallRating;
                 var userName = "anonymous";
                 var comment = doc.data().comment;
                 var content = doc.data().materialsHandle;
                 var waitingTime = doc.data().waitingTime;
+                var cleanliness = doc.data().cleanlinessRating;
                 var time = doc.data().last_updated.toDate();
                 var recommend = doc.data().recommended;
+
+                let reviewCard = reviewTemplate.content.cloneNode(true);
+
+                //Add starts
+                let starRating = "";
+                if (rate) {
+                    for (let i = 0; i < rate; i++) {
+                        starRating += '<span class="material-icons">star</span>';
+                    }
+                    //Complement stars with no-fill starts
+                    for (let i = rate; i < 5; i++) {
+                        starRating += '<span class="material-icons">star_outline</span>';
+                    }
+                } else {
+                    for (let i = 0; i < 5; i++) {
+                        starRating += '<span class="material-icons">star_outline</span>';
+                    }
+                }
+                reviewCard.querySelector('.rating-goes-here').innerHTML = `Rate: ${starRating}`;
+                reviewCard.querySelector('.users-name-goes-here').innerHTML = userName;
+                reviewCard.querySelector('.review-content-goes-here').innerHTML = `Comment: ${comment}`;
+                reviewCard.querySelector('.facility-accept-goes-here').innerHTML = `Accept: ${content};`
+                reviewCard.querySelector('.waiting-time-goes-here').innerHTML = `Waiting time: ${waitingTime} minutes`;
+                reviewCard.querySelector('.cleanliness-goes-here').innerHTML = `Cleanliness: ${cleanliness}`;
+                reviewCard.querySelector('.recommend-goes-here').innerHTML = `Recommend: ${recommend}`;
+                reviewCard.querySelector('.update-time-goes-here').innerHTML = new Date(time).toLocaleString();
+
+                //Append template to Review section
+                reviewCardGroup.appendChild(reviewCard);
+
 
             })
 
@@ -65,8 +100,7 @@ displayReviewInfo()
 
 
 
-
 // take the user back to the previous page
 function goBack() {
-                window.history.back();
-            }
+    window.history.back();
+}

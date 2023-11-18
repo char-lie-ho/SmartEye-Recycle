@@ -80,10 +80,10 @@ function displayReviewInfo() {
                     }
                 }
                 // Rating
-                reviewCard.querySelector('.rating-goes-here').innerHTML = `Rating: ${starRating}`;
+                reviewCard.querySelector('.rating-goes-here').innerHTML += `${starRating}`;
 
                 // User name
-                reviewCard.querySelector('.users-name-goes-here').innerHTML = userName;
+                reviewCard.querySelector('.users-name-goes-here').innerHTML += userName;
 
                 // Comment
                 if (comment != '') {

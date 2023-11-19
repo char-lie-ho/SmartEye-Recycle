@@ -29,5 +29,7 @@ categoryRef.where('barcode', 'array-contains', searchBarcode)
             });
         } else {
             console.log('Not found!');
+            document.getElementById("suggestion").style.display = 'none';
+            document.getElementById("option").innerText = 'Sorry, item not found';
         }
     })

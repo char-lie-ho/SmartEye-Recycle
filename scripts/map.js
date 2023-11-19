@@ -68,7 +68,7 @@ function showMap() {
 
 
                         // Pushes information into the features array
-                        // in our application, we have a string description of the hike
+                        // in our application, we have a string description of the facilities
                         features.push({
                             'type': 'Feature',
                             'properties': {
@@ -84,7 +84,7 @@ function showMap() {
                                   ${openHourSa}<br>
                                   ${openHourSu}<br>
                                 </div>
-                                <a href="http://127.0.0.1:5500/pages/facility_template.html?docID=${doc.id}" target="_blank" title="Opens in a new window">More Info</a>`
+                                <a href="facility_template.html?docID=${doc.id}" target="_blank" title="Opens in a new window">More Info</a>`
                             },
                             'geometry': {
                                 'type': 'Point',

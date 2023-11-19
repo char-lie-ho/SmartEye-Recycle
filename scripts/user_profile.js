@@ -86,41 +86,36 @@ function saveUserInfo() {
 
 // upload profile
 
-// const uploadButton = document.getElementById('uploadButton');
-const uploadPopup = document.getElementById('uploadPopup');
+
 const imageInput = document.getElementById('imageInput');
-
-
 const imgSrc = document.getElementById('mypic-goes-here');
-
 
 function selectImage() {
     document.getElementById('imageInput').click()
     confirmImage.style.display = 'block';
 }
 
-//upload image, 
+//upload image to server
 function uploadImage() {
-    const selectedFile = imageInput.files[0]; //get and store the uploaded img into this const
+    //get the selected file from the input element
+    const selectedFile = imageInput.files[0];
     if (selectedFile) {
-
-        console.log('File uploaded:', selectedFile.name);
-        var blob = URL.createObjectURL(selectedFile); //create a url of the object
-        console.log(blob);
-        imgSrc.src = blob; // Display this image in time on html
-
+        // create a URL for the selected file (a temporary URL for preview)
+        var blob = URL.createObjectURL(selectedFile);
+        // display this image in time on html
+        imgSrc.src = blob;
+        // reference to the Firebase Storage with a specific path for the uploaded image
         const storageRef = firebase.storage().ref('images/' + blob);
-        // Upload the file to Firebase Storage
-        storageRef.put(selectedFile).then((snapshot) => {
-            console.log('File uploaded successfully!', snapshot);
-
-            // Get the download URL of the uploaded image
+        // upload the file to Firebase Storage
+        storageRef.put(selectedFile).then(() => {
+            // get the download URL of the uploaded image
             storageRef.getDownloadURL().then((downloadURL) => {
-                console.log('Image URL:', downloadURL);
+                // update the image source with the download URL
                 imgSrc.src = downloadURL;
+                //update user's data in database
                 currentUser.update({
                     "image": downloadURL
-                }). then(
+                }).then(
                     confirmImage.style.display = 'none'
                 )
             })

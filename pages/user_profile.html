@@ -58,7 +58,7 @@
                                         <!-- Update profile image btn -->
                                         <button type="button"
                                             class="btn btn-success btn-rounded btn-sm add-photo-button"
-                                            id="uploadButton" onclick="selectImage()"style="border-radius: 60px;">
+                                            id="uploadButton" onclick="selectImage()" style="border-radius: 60px;">
                                             <span class="material-symbols-outlined">
                                                 add_a_photo
                                             </span>
@@ -76,19 +76,17 @@
                         <div class="container-fluid">
                             <div class="col">
                                 <!-- Edit Profile button -->
-                                <div style="text-align: end;">
-                                    <p><button type="button" class="btn btn-outline-success btn-sm"
+                                <div>
+                                    <button type="button" class="btn btn-outline-success btn-sm"
+                                        onclick="uploadImage()" id="confirmImage" style="display: none;"><span class="material-symbols-outlined">
+                                            check
+                                        </span>Confirm</button>
+                                    <p style="text-align: end">
+                                        <button type="button" class="btn btn-outline-success btn-sm"
                                             onclick="editUserInfo()"><span
-                                                class="material-symbols-outlined">edit</span>Edit Info</button></p>
-                                </div>
-
-                                <span class="close" onclick="closePopup()" id="closeIcon">&times;</span>
-                                <div class="upload-popup" id="uploadPopup" style="display: none;">
-                                    <div class="popup-content">
-                                        <!-- <h2>Upload Image</h2> -->
-                                        <input type="file" id="imageInput" accept="image/*">
-                                    </div>
-                                    <button onclick="uploadImage()">Submit</button>
+                                                class="material-symbols-outlined">edit</span>Edit Info</button>
+                                        <input style="display: none;" type="file" id="imageInput" accept="image/*">
+                                    </p>
                                 </div>
                                 <hr class="mt-0 mb-4">
                                 <div class="row pt-1">

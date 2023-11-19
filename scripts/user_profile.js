@@ -96,26 +96,20 @@ const imgSrc = document.getElementById('mypic-goes-here');
 
 function selectImage() {
     document.getElementById('imageInput').click()
-    uploadPopup.style.display = 'block';
-}
-
-function closePopup() {
-    uploadPopup.style.display = 'none';
+    confirmImage.style.display = 'block';
 }
 
 //upload image, 
 function uploadImage() {
     const selectedFile = imageInput.files[0]; //get and store the uploaded img into this const
-
     if (selectedFile) {
-        // Handle the upload logic, e.g., send the file to a server or perform other operations
+
         console.log('File uploaded:', selectedFile.name);
         var blob = URL.createObjectURL(selectedFile); //create a url of the object
         console.log(blob);
         imgSrc.src = blob; // Display this image in time on html
 
         const storageRef = firebase.storage().ref('images/' + blob);
-
         // Upload the file to Firebase Storage
         storageRef.put(selectedFile).then((snapshot) => {
             console.log('File uploaded successfully!', snapshot);
@@ -126,8 +120,9 @@ function uploadImage() {
                 imgSrc.src = downloadURL;
                 currentUser.update({
                     "image": downloadURL
-                })
-
+                }). then(
+                    confirmImage.style.display = 'none'
+                )
             })
         })
     } else {

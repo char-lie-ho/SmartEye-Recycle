@@ -1,4 +1,4 @@
-var currentUser = null;  
+var currentUser = null;
 
 // Get user name and email
 function getUserInfoFromAuth() {
@@ -6,22 +6,16 @@ function getUserInfoFromAuth() {
         // Check if a user is signed in:
         if (user) {
             currentUser = db.collection("users").doc(user.uid)
-            console.log(currentUser)
             //get the document for current user.
             currentUser.get()
                 .then(userDoc => {
                     // Do something for the currently logged-in user here: 
-                    console.log(user.uid); // Print the uid in the browser console
-                    console.log(user.displayName); // Print the user name in the browser console
-                    console.log(user.email); // Print the email in the browser console
-
-
                     // Get user information
                     var userName = user.displayName;
                     var userEmail = user.email;
                     var userPhone = userDoc.data().phone;
                     var userCity = userDoc.data().city;
-                    console.log(userCity)
+                    var userImage = userDoc.data().image;
 
                     //if the data fields are not empty, then write them in to the form.
                     if (userName != null) {
@@ -32,6 +26,9 @@ function getUserInfoFromAuth() {
                     }
                     if (userCity != null) {
                         document.getElementById("cityInput").value = userCity;
+                    }
+                    if (userImage != null) {
+                        document.getElementById("mypic-goes-here").src = userImage
                     }
 
                     // Insert user name using JS
@@ -89,14 +86,16 @@ function saveUserInfo() {
 
 // upload profile
 
-const uploadButton = document.getElementById('uploadButton');
+// const uploadButton = document.getElementById('uploadButton');
 const uploadPopup = document.getElementById('uploadPopup');
 const imageInput = document.getElementById('imageInput');
+
+
 const imgSrc = document.getElementById('mypic-goes-here');
 
-uploadButton.addEventListener('click', openPopup);
 
-function openPopup() {
+function selectImage() {
+    document.getElementById('imageInput').click()
     uploadPopup.style.display = 'block';
 }
 
@@ -104,21 +103,36 @@ function closePopup() {
     uploadPopup.style.display = 'none';
 }
 
+//upload image, 
 function uploadImage() {
     const selectedFile = imageInput.files[0]; //get and store the uploaded img into this const
-
 
     if (selectedFile) {
         // Handle the upload logic, e.g., send the file to a server or perform other operations
         console.log('File uploaded:', selectedFile.name);
-        var blob = URL.createObjectURL(selectedFile);
+        var blob = URL.createObjectURL(selectedFile); //create a url of the object
         console.log(blob);
-        imgSrc.src=blob;
-        
-        closePopup();
-    } else {
-        alert('Please select an image file.');    }
+        imgSrc.src = blob; // Display this image in time on html
 
+        const storageRef = firebase.storage().ref('images/' + blob);
+
+        // Upload the file to Firebase Storage
+        storageRef.put(selectedFile).then((snapshot) => {
+            console.log('File uploaded successfully!', snapshot);
+
+            // Get the download URL of the uploaded image
+            storageRef.getDownloadURL().then((downloadURL) => {
+                console.log('Image URL:', downloadURL);
+                imgSrc.src = downloadURL;
+                currentUser.update({
+                    "image": downloadURL
+                })
+
+            })
+        })
+    } else {
+        alert('Please select an image file.');
+    }
 }
 
 

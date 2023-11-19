@@ -105,7 +105,7 @@ function uploadImage() {
         // display this image in time on html
         imgSrc.src = blob;
         // reference to the Firebase Storage with a specific path for the uploaded image
-        const storageRef = firebase.storage().ref('images/' + blob);
+        const storageRef = firebase.storage().ref('images/' + currentUser.id + ".jpg");
         // upload the file to Firebase Storage
         storageRef.put(selectedFile).then(() => {
             // get the download URL of the uploaded image

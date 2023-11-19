@@ -42,19 +42,22 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to url
 └── README.md
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
+├── pages                    # Folder for html files
+|   /index.html              # landing HTML file, this is what users see when you come to url
 ├── images                   # Folder for images
-    /blah.jpg                # Acknowledge source
+|   /blah.jpg                # Acknowledge source
 ├── scripts                  # Folder for scripts
-    /blah.js                 # 
+|   /blah.js                 # 
 ├── styles                   # Folder for styles
-    /blah.css                # 
-
-
+|   /blah.css                # 
+├── text                     # Folder for headers and footer
+|   /footer.html             # footer HTML file
+|   /nav_after_login.html    # navbar HTML file before login
+|   /nav_before_login.html   # navbar HTML file after login
 
 ```
 

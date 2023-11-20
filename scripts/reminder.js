@@ -70,7 +70,10 @@ function displayRemindTime() {
             userDocRef.get().then(function (doc) {
                 if (doc.exists) {
                     var userData = doc.data().remindTime;
-                    document.getElementById('alarm-goes-here').innerHTML = userData;
+                    // ensure only display alarms if exist
+                    if (userData !== undefined){
+                       document.getElementById('alarm-goes-here').innerHTML = userData; 
+                    }
                 }
             }).catch((error) => {
                 console.error('Error retrieving document:', error);

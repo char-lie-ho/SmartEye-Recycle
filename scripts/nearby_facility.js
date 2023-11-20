@@ -1,13 +1,13 @@
 // read from database
 function displayCardsDynamically(collection) {
     let cardTemplate = document.getElementById("facilityTemplate"); // Retrieve the HTML element with the ID "hikeCardTemplate" and store it in the cardTemplate variable. 
-    
-    db.collection(collection).get()   
+
+    db.collection(collection).get()
         .then(allFacilities => {
             //var i = 1;  //Optional: if you want to have a unique ID for each hike
             allFacilities.forEach(doc => { //iterate thru each doc
-                var title = doc.data().name;       
-                var address = doc.data().address; 
+                var title = doc.data().name;
+                var address = doc.data().address;
                 var operation = doc.data().hours_of_operation;
                 var facilityID = doc.id;
                 var image_url = doc.data().image;
@@ -15,11 +15,11 @@ function displayCardsDynamically(collection) {
 
                 //update title and text and image
                 eachcard.querySelector('.card-title').innerHTML = title;
-                eachcard.querySelector('.card-address').innerHTML = address; 
+                eachcard.querySelector('.card-address').innerHTML = address;
                 eachcard.querySelector('.card-image').src = image_url
                 //load the appropriate facility
                 eachcard.querySelector('a').href = "facility_template.html?docID=" + facilityID;
-
+                 
                 //attach to gallery, Example: "hikes-go-here"
                 document.getElementById("facilities-goes-here").appendChild(eachcard);
 

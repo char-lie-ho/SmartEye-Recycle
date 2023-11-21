@@ -19,7 +19,7 @@ function displayCardsDynamically(collection) {
                 eachcard.querySelector('.card-image').src = image_url
                 //load the appropriate facility
                 eachcard.querySelector('a').href = "facility_template.html?docID=" + facilityID;
-                 
+
                 //attach to gallery, Example: "hikes-go-here"
                 document.getElementById("facilities-goes-here").appendChild(eachcard);
 

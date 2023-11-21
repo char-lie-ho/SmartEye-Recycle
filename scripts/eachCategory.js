@@ -14,11 +14,20 @@ categoryRef.get()
             const recyclable = doc.data().recyclable;
             const examples = doc.data().examples;
             const image_url = doc.data().img;
-            // console.log(`Instruction: ${instruction}, Recyclable: ${recyclable}`);
+
             document.getElementById("material").innerText = title;
-            document.getElementById("instruction-go-here").innerHTML = `<p>Where accept: ${instructionA}</p><p>Not accepted: ${instructionNotAccept}`;
             document.getElementById("recyclable-go-here").innerText = recyclable;
-            document.getElementById("example-go-here").innerText = examples;
+            examples.forEach((item)=> {
+                document.getElementById("example-go-here").innerHTML += `<li>${item}</li>`;
+            })
+            document.getElementById("instruction-go-here").innerHTML += '<h6>Where accepted:</h6>'
+            instructionA.forEach((item) => {
+                document.getElementById("instruction-go-here").innerHTML += `<li>${item}</li>`
+            })
+            document.getElementById("instruction-go-here").innerHTML += '<h6>Not accepted:</h6>'
+            instructionNotAccept.forEach((item)=>{
+                document.getElementById("instruction-go-here").innerHTML += `<li>${item}</li>`
+            })          
             document.getElementById('material_image').setAttribute('src', image_url);
         } else {
             console.log('No such document!');

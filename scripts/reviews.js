@@ -56,6 +56,7 @@ function submitReview() {
 
             // Refresh the page 
             location.reload();
+            window.location.href = "neaby_facility.html"
         })
 }
 document.getElementById('submit_review').addEventListener('click', function () {

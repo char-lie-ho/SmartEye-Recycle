@@ -69,9 +69,20 @@ function displayRemindTime() {
             userDocRef.get().then(function (doc) {
                 if (doc.exists) {
                     var userData = doc.data().remindTime;
+                    console.log(userData)
                     // ensure only display alarms if exist
                     if (userData !== undefined){
-                       document.getElementById('alarm-goes-here').innerHTML = userData; 
+                        document.getElementById('alarm-goes-here').innerHTML = '';
+                        document.getElementById('alarm-goes-here').innerHTML = `<ol id="alarm_list"></ol>`;
+                        //loop through remindTime array
+                        userData.forEach((time)=>{
+                            // create list element
+                            list_items = document.createElement('li');
+                            // write text into <li>tag
+                            list_items.textContent = time;
+                            // append <li> into <ol>
+                            document.getElementById('alarm_list').appendChild(list_items)
+                        })
                     }
                 }
             }).catch((error) => {

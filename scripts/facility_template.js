@@ -64,13 +64,13 @@ function displayReviewInfo() {
 
                 let reviewCard = reviewTemplate.content.cloneNode(true);
 
-                //Add starts
+                //Add stars
                 let starRating = "";
                 if (rate) {
                     for (let i = 0; i < rate; i++) {
                         starRating += '<span class="material-icons">star</span>';
                     }
-                    //Complement stars with no-fill starts
+                    //Complement stars with no-fill stars
                     for (let i = rate; i < 5; i++) {
                         starRating += '<span class="material-icons">star_outline</span>';
                     }

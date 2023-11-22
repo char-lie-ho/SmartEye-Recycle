@@ -56,6 +56,7 @@ function submitReview() {
 
             // Refresh the page 
             location.reload();
+            // redirect user to facility page
             window.location.href = "neaby_facility.html"
         })
 }

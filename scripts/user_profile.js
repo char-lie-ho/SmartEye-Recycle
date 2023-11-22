@@ -42,6 +42,7 @@ function getUserInfoFromAuth() {
 
                     // Insert email using JS
                     document.getElementById("phone-goes-here").innerText = userPhone;
+                    console.log(currentUser.uid)
 
 
                 })
@@ -51,6 +52,29 @@ function getUserInfoFromAuth() {
         }
     });
 }
+
+function sync_changes() {
+    //Get current user's profile
+    var currentUser = firebase.auth().currentUser;
+    var userDocRef = db.collection('users').doc(currentUser.uid);
+    userDocRef.onSnapshot((snapshot) => {
+        var userData = snapshot.data();
+        console.log(currentUser.uid, userData)
+        var userName = userData.name;
+        var userPhone = userData.phone;
+        var userCity = userData.city;
+        // Insert user name using JS
+        document.getElementById("name-goes-here").innerText = userName;
+
+        // Insert city using JS
+        document.getElementById("city-goes-here").innerText = userCity;
+
+        // Insert email using JS
+        document.getElementById("phone-goes-here").innerText = userPhone;
+    })
+}
+
+
 
 getUserInfoFromAuth(); // Run the function
 
@@ -62,21 +86,22 @@ function editUserInfo() {
     document.getElementById('editProfile').scrollIntoView({ behavior: 'smooth' })
 }
 
-function saveUserInfo() {
+async function saveUserInfo() {
     console.log('save')
     //get entered info from user
     userName = document.getElementById("nameInput").value;
     userPhone = document.getElementById("phoneInput").value;
     userCity = document.getElementById("cityInput").value;
 
-    currentUser.update({
+    await currentUser.update({
         name: userName,
         phone: userPhone,
         city: userCity
+    }).then(() => {
+        console.log("Document successfully updated!");
+
     })
-        .then(() => {
-            console.log("Document successfully updated!");
-        })
+    sync_changes()
 
     document.getElementById('personalInfoFields').disabled = true;
     document.getElementById('editProfile').style.display = "none"

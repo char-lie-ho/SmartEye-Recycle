@@ -46,8 +46,7 @@ function saveInToDatabase() {
 
         // Get the document for the current user.
         currentUser.update({
-            userID: userID,
-            remindTime: remindTime,
+            remindTime: firebase.firestore.FieldValue.arrayUnion(remindTime),
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         }).then(() => {
             alert('You have saved the alarm!');

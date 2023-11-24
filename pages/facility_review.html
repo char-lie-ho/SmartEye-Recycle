@@ -103,7 +103,8 @@
                     <label for="waitingTime">
                         <h6>Waiting Time (in minutes):</h6>
                     </label>
-                    <input type="number" class="form-control" id="waitingTime" name="waitingTime" min="0" step="1" value="0">
+                    <input type="number" class="form-control" id="waitingTime" name="waitingTime" min="0" step="1"
+                        value="0">
                 </div>
                 <br>
 
@@ -121,7 +122,7 @@
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="cleanliness" value="average">
                         <label>Average</label>
-                    </div>                    
+                    </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="cleanliness" value="poor">
                         <label>Poor</label>
@@ -171,8 +172,12 @@
 
                 <!-- Submit  -->
                 <br>
-                <div>
+                <div class="d-flex justify-content-around">
                     <button id="submit_review" class="btn btn-primary" type="button">Submit feedback</button>
+                    <span><input class="form-check-input" type="checkbox" value="" id="anonymous">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Anonymous Review
+                    </label></span>
                 </div>
             </form>
         </div>

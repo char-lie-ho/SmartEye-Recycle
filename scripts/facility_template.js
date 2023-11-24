@@ -46,12 +46,14 @@ function displayReviewInfo() {
     let reviewCardGroup = document.getElementById("reviewGroup");
     let reviewTemplate = document.getElementById("reviewTemplate");
 
-    db.collection("reviews")
+    db.collection("reviews") 
         .where("facilityID", "==", ID)
+        .limit(5) //Limit to 5 reviews
         .get()
         .then((allReviews) => {
             review = allReviews.docs;
-            // console.log(review);
+            // Sort reviews by timestamp in descending order
+            review.sort((a, b) => b.data().last_updated - a.data().last_updated);
             review.forEach((doc) => {
                 var rate = doc.data().overallRating;
                 var userName = doc.data().user;
@@ -61,7 +63,6 @@ function displayReviewInfo() {
                 var cleanliness = doc.data().cleanlinessRating;
                 var time = doc.data().last_updated.toDate();
                 var recommend = doc.data().recommended;
-
                 let reviewCard = reviewTemplate.content.cloneNode(true);
 
                 //Add stars
@@ -80,7 +81,7 @@ function displayReviewInfo() {
                     }
                 }
                 // Rating
-                reviewCard.querySelector('.rating-goes-here').innerHTML += `${starRating}`;
+                reviewCard.querySelector('.rating-goes-here').innerHTML = `${starRating}`;
 
                 // User name
                 reviewCard.querySelector('.users-name-goes-here').innerHTML += userName;
@@ -115,13 +116,10 @@ function displayReviewInfo() {
 
                 //Append template to Review section
                 reviewCardGroup.appendChild(reviewCard);
-
             })
-
         })
 }
 displayReviewInfo()
-
 
 
 // take the user back to the previous page

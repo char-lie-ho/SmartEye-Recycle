@@ -36,9 +36,16 @@ function submitReview() {
     console.log('Submitted');
     // Define a variable for the collection you want to create in Firestore to populate data
     var review = db.collection("reviews");
+
     // collect the checked boxes in Types of material
     const selectedValues = [];
     document.querySelectorAll('[id="materials"]:checked').forEach((checkbox) => { selectedValues.push(checkbox.value) });
+
+    // Check if the review is anonymous
+    var checkbox = document.getElementById('anonymous');
+    if (checkbox.checked) {
+        userName = 'Anonymous'
+    } 
     review.add({
         facilityID: facilityID,
         materialsHandle: selectedValues,
@@ -47,7 +54,7 @@ function submitReview() {
         overallRating: document.getElementById('rating-value').innerHTML,
         recommended: document.querySelector('input[name="recommend"]:checked').value,
         comment: document.getElementById('comment').value,
-        user: `${userName}`,
+        user: `${userName}`,        
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
     })
         .then(function () {
@@ -57,6 +64,8 @@ function submitReview() {
             window.location.href = "facility_template.html?docID=" + facilityID
         })
 }
+
+// event listener for the submit button
 document.getElementById('submit_review').addEventListener('click', function () {
     submitReview();
 });

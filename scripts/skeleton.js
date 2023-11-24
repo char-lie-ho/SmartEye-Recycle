@@ -20,3 +20,4 @@ loadSkeleton(); //invoke the function
 function goBack() {
     window.history.back();
 }
+

@@ -45,7 +45,7 @@ function submitReview() {
     var checkbox = document.getElementById('anonymous');
     if (checkbox.checked) {
         userName = 'Anonymous'
-    } 
+    }
     review.add({
         facilityID: facilityID,
         materialsHandle: selectedValues,
@@ -54,14 +54,15 @@ function submitReview() {
         overallRating: document.getElementById('rating-value').innerHTML,
         recommended: document.querySelector('input[name="recommend"]:checked').value,
         comment: document.getElementById('comment').value,
-        user: `${userName}`,        
+        user: `${userName}`,
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
     })
         .then(function () {
             // Provide feedback to the user
-            alert("Review submitted successfully!");
-            // redirect user to the previous page
-            window.location.href = "facility_template.html?docID=" + facilityID
+            swal("Review submitted successfully!");
+            document.querySelector('.confirm').addEventListener('click', function () {
+                window.location.href = "facility_template.html?docID=" + facilityID;
+            });
         })
 }
 

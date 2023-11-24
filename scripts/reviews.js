@@ -53,11 +53,8 @@ function submitReview() {
         .then(function () {
             // Provide feedback to the user
             alert("Review submitted successfully!");
-
-            // Refresh the page 
-            location.reload();
-            // redirect user to facility page
-            window.location.href = "neaby_facility.html"
+            // redirect user to the previous page
+            window.location.href = "facility_template.html?docID=" + facilityID
         })
 }
 document.getElementById('submit_review').addEventListener('click', function () {

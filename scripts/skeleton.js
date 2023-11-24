@@ -15,3 +15,8 @@ function loadSkeleton() {
 }
 loadSkeleton(); //invoke the function
 
+
+// take the user back to the previous page
+function goBack() {
+    window.history.back();
+}

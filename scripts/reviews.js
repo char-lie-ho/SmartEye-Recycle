@@ -15,8 +15,6 @@ $(document).ready(function () {
 
 //load the facility name
 var facilityID = localStorage.getItem("facilityID");
-// console.log(facilityID)
-
 
 // display the facility name 
 function getFacilityName(id) {
@@ -76,9 +74,6 @@ function goBack() {
     window.history.back();
 }
 
-// set the default to anonymous
-var userName = 'anonymous';
-
 // Obtain the current user name
 function getUserInfoFromAuth() {
     firebase.auth().onAuthStateChanged(user => {
@@ -88,7 +83,6 @@ function getUserInfoFromAuth() {
             currentUser.get()
                 .then(() => {
                     userName = user.displayName
-                    // console.log(user.displayName)
                 })
         }
     })

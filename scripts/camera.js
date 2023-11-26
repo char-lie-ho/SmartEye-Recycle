@@ -152,6 +152,8 @@ document.getElementById('go').addEventListener('click', function () {
 function goBack() {
   window.history.back();
 }
+
+//pop-up window for manually enter barcode
 document.getElementById('keyboard').addEventListener('click', function () {
   Swal.fire({
     title: "Enter your barcode",
@@ -162,9 +164,10 @@ document.getElementById('keyboard').addEventListener('click', function () {
     showCancelButton: true,
     confirmButtonText: "Look up",
     showLoaderOnConfirm: true,
+    preConfirm: (barcode) => {
+      // replace the below function to a html query and redirect user
+      window.location.href = `post_scan.html?${barcode}`
+    },
     allowOutsideClick: () => !Swal.isLoading()
-  }).then(() => {
-    // replace the below function to a html query and redirect user
-    console.log('yes')
-  });
+  })
 })

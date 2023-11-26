@@ -13,13 +13,13 @@ function submitTime() {
 
     // check if the input field is not empty
     if (isNaN(newAlarmTime.getTime())) {
-        swal("Please enter a valid date and time.");
+        Swal.fire("Please enter a valid date and time.");
         return false;
     }
 
     // check if the entered time is in the past
     if (newAlarmTime <= currentTime) {
-        swal("Please enter a future date and time.");
+        Swal.fire("Please enter a future date and time.");
         return false;
     }
 
@@ -49,7 +49,7 @@ function saveInToDatabase() {
                 remindTime: firebase.firestore.FieldValue.arrayUnion(remindTime),
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
             }).then(() => {
-                swal('You have saved the alarm!');
+                Swal.fire('You have saved the alarm!');
             });
         } else {
             console.log("No user is signed in");

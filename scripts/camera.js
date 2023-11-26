@@ -1,6 +1,6 @@
 var barcodeHistory = [];
 
-
+// Barbode scanner function
 function startScanner() {
   Quagga.init({
     inputStream: {
@@ -121,7 +121,7 @@ function startScanner() {
   //pause scanning
   document.getElementById('stopButton').addEventListener('click', stopScanning);
   //restart scanning
-  document.getElementById('restartButton').addEventListener('click',() => {
+  document.getElementById('restartButton').addEventListener('click', () => {
     // Refresh the page when the button is clicked
     location.reload();
   });
@@ -143,12 +143,28 @@ function areLast50BarcodesSame() {
 // Alter the href inside go based on the barcode
 // Add a click event listener to the button
 document.getElementById('go').addEventListener('click', function () {
-    document.getElementById('go')
+  document.getElementById('go')
     .setAttribute('href', `post_scan.html?${barcodeHistory[0]}`);
-  });
+});
 
 
 // take the user back to the previous page
 function goBack() {
   window.history.back();
 }
+document.getElementById('keyboard').addEventListener('click', function () {
+  Swal.fire({
+    title: "Enter your barcode",
+    input: "text",
+    inputAttributes: {
+      autocapitalize: "off"
+    },
+    showCancelButton: true,
+    confirmButtonText: "Look up",
+    showLoaderOnConfirm: true,
+    allowOutsideClick: () => !Swal.isLoading()
+  }).then(() => {
+    // replace the below function to a html query and redirect user
+    console.log('yes')
+  });
+})

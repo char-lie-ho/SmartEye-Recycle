@@ -36,6 +36,11 @@
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="../styles/stylesheet.css" type="text/css">
 
+    <!-- Sweet Alert -->
+    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+
     <style>
         /* In order to place the tracking correctly */
         canvas.drawing,
@@ -56,7 +61,6 @@
         <div class="row align-items-center g-5 py-5">
             <div class="col d-grid gap-2 justify-content-md-start">
                 <h2>Barcode Scanner</h2>
-                When the barcode is detected, click 'GO' to recycling info.
                 <!-- camera -->
                 <div class="col embed-responsive modal-dialog">
                     <!-- Div to show the scanner -->
@@ -72,6 +76,8 @@
                                 class="material-icons">pause</i></button>
                         <button type="button" class="btn btn-outline-success btn-lg" id="restartButton"><i
                                 class="material-icons">restart_alt</i></button>
+                        <button type="button" class="btn btn-outline-success btn-lg" id="keyboard"><i
+                                class="material-icons">keyboard</i></button>
                     </div>
                 </div>
             </div>

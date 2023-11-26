@@ -82,8 +82,6 @@ function startScanner() {
   Quagga.onDetected(function (result) {
     var barcode = result.codeResult.code;
 
-    console.log("Barcode detected and processed : [" + barcode + "]", result);
-
     // Add the barcode to the history array
     barcodeHistory.push(barcode);
 
@@ -94,8 +92,10 @@ function startScanner() {
 
     // Check if the last 50 barcodes are the same
     if (areLast50BarcodesSame()) {
-      console.log("Last 50 barcodes are the same:", barcodeHistory[0]);
+      // Display the barcode on the html after successfully read the barcode
       document.getElementById('result').textContent = 'Your barcode is ' + barcodeHistory[0];
+
+      // Display the go button after successfully read the barcode
       document.getElementById('go').style.display = 'inline'
     }
   });
@@ -120,6 +120,7 @@ function startScanner() {
 
   //pause scanning
   document.getElementById('stopButton').addEventListener('click', stopScanning);
+
   //restart scanning
   document.getElementById('restartButton').addEventListener('click', () => {
     // Refresh the page when the button is clicked
@@ -165,9 +166,31 @@ document.getElementById('keyboard').addEventListener('click', function () {
     confirmButtonText: "Look up",
     showLoaderOnConfirm: true,
     preConfirm: (barcode) => {
-      // replace the below function to a html query and redirect user
+      // redirect user to another page when look up Btn is clicked
       window.location.href = `post_scan.html?${barcode}`
     },
     allowOutsideClick: () => !Swal.isLoading()
   })
+})
+
+// Help button
+document.getElementById('help').addEventListener('click', function () {
+  Swal.fire({
+    title: "Quick Guide:",
+    html: `   
+    <ol style='text-align: left'>
+        <li>Activate the camera</li>
+        <li>Place the barcode about 10cm away from the camera</li>
+        <li>Click 'Look up!' for recycling details when the barcode number appears</li>
+    </ol>
+
+    <p><strong>Additional Options:</strong></p>
+    <ul style='text-align: left'>
+        <li>Use the keyboard icon for manual barcode entry</li>
+        <li>Use the Pause button to stop the camera temporarily</li>
+        <li>Click Restart to resume camera</li>
+    </ul>
+
+    <p style='text-align: left'>For help, click the 'support' button to contact us. Happy recycling!</p>`
+  });
 })

@@ -60,7 +60,10 @@
     <div class="container col-xxl-8 px-4 py-4">
         <div class="row align-items-center g-5 py-5">
             <div class="col d-grid gap-2 justify-content-md-start">
-                <h2>Barcode Scanner</h2>
+                <div class="row">
+                <div class="col-8"><h2>Barcode Scanner</h2></div>
+                <div class="col-4"><button type="button" class="btn btn-outline-primary btn-sm" id="help"><i
+                        class="material-icons">help</i></button></div></div>
                 <!-- camera -->
                 <div class="col embed-responsive modal-dialog">
                     <!-- Div to show the scanner -->
@@ -70,7 +73,7 @@
 
                 <div>
                     <div style="text-align: center; margin: auto">
-                        <a style="display:none" type="button" class="btn btn-success btn-lg px-4" id="go"> GO! </a>
+                        <a style="display:none" type="button" class="btn btn-success btn-lg px-4" id="go"> Look up! </a>
                         <!-- <a type="button" class="btn btn-outline-secondary" href="#"> Help </a> -->
                         <button type="button" class="btn btn-outline-success btn-lg" id="stopButton"><i
                                 class="material-icons">pause</i></button>
@@ -78,6 +81,7 @@
                                 class="material-icons">restart_alt</i></button>
                         <button type="button" class="btn btn-outline-success btn-lg" id="keyboard"><i
                                 class="material-icons">keyboard</i></button>
+
                     </div>
                 </div>
             </div>

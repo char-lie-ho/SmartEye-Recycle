@@ -48,7 +48,7 @@ function saveSearchandRedirect() {
                     window.location.href = `category_template.html?docID=${category}`
                 });
             } else {
-                swal('Sorry, Not found!')
+                Swal.fire('Sorry, Not found!')
             }
         })
 }

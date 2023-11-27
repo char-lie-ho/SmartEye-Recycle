@@ -8,7 +8,8 @@ nav a {
 }
 
 footer div {
-    color: rgb(1, 50, 32);
+    /* color: rgb(1, 50, 32); */
+    color: white;
 }
 
 .card-img-top {

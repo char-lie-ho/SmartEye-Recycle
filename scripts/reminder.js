@@ -58,6 +58,18 @@ function saveInToDatabase() {
     }
 }
 
+
+// Delete the selected time from database
+function cleandata(time, userDocRef){
+    userDocRef.update({
+        remindTime: firebase.firestore.FieldValue.arrayRemove(time),
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(
+        Swal.fire('You have delete it.')
+    )
+}
+
+
 // Display the time in the recycling alarm
 function displayRemindTime() {
     firebase.auth().onAuthStateChanged(function (user) {
@@ -96,7 +108,7 @@ function displayRemindTime() {
                                 list_items.remove()
                                 
                                 //TODO: delete from database
-                                // cleandata(time);
+                                cleandata(time, userDocRef);
 
                             })
                             list_items.append(trash)

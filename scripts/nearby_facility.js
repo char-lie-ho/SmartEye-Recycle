@@ -27,6 +27,7 @@ function displayCardsDynamically(collection) {
 
                 var favoriteButton = document.getElementById("favoriteButton");
                 favoriteButton.addEventListener("click", function () {
+
                     this.classList.toggle("filled");
                 })
             });

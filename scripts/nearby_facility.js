@@ -24,9 +24,16 @@ function displayCardsDynamically(collection) {
                 document.getElementById("facilities-goes-here").appendChild(eachcard);
 
                 //i++;   //Optional: iterate variable to serve as unique ID
-            })
+
+                var favoriteButton = document.getElementById("favoriteButton");
+                favoriteButton.addEventListener("click", function () {
+                    this.classList.toggle("filled");
+                })
+            });
+
         })
 }
+
 
 displayCardsDynamically("facility");  //input param is the name of the collection
 

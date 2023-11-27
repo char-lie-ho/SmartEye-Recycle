@@ -19,15 +19,15 @@ function displayCardsDynamically(collection) {
                 eachcard.querySelector('.card-image').src = image_url
                 //load the appropriate facility
                 eachcard.querySelector('a').href = "facility_template.html?docID=" + facilityID;
+                eachcard.querySelector('i').id = "fav" + facilityID;
 
                 //attach to gallery, Example: "hikes-go-here"
                 document.getElementById("facilities-goes-here").appendChild(eachcard);
 
                 //i++;   //Optional: iterate variable to serve as unique ID
 
-                var favoriteButton = document.getElementById("favoriteButton");
+                var favoriteButton = document.getElementById("fav" + facilityID);
                 favoriteButton.addEventListener("click", function () {
-
                     this.classList.toggle("filled");
                 })
             });

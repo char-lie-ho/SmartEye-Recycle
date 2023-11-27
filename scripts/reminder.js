@@ -45,7 +45,7 @@ function submitTime() {
 }
 
 //save the time into database
-async function saveInToDatabase() {
+function saveInToDatabase() {
     if (submitTime()) {
         const user = firebase.auth().currentUser;
         if (user) {
@@ -54,7 +54,7 @@ async function saveInToDatabase() {
             remindTime = localStorage.getItem('alarmTime');
 
             // Get the document for the current user.
-            await currentUser.update({
+            currentUser.update({
                 remindTime: firebase.firestore.FieldValue.arrayUnion(remindTime),
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
             }).then(() => {
@@ -64,7 +64,6 @@ async function saveInToDatabase() {
             console.log("No user is signed in");
             window.location.href = 'login.html';
         }
-        window.location.reload()
     }
 }
 

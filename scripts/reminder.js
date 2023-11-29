@@ -31,7 +31,7 @@ function submitTime() {
     selectedTime = `${year} - ${month} - ${day} - ${hours} : ${minutes}`
 
     localStorage.setItem('alarmTime', selectedTime) // save the selected time into application
-
+    document.getElementById('alarm-goes-here').innerHTML = `<ol id="alarm_list"></ol>`
     document.getElementById('alarm_list').innerHTML += `
     <li>
     ${selectedTime}
@@ -57,7 +57,8 @@ function saveInToDatabase() {
             currentUser.update({
                 remindTime: firebase.firestore.FieldValue.arrayUnion(remindTime),
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
-            }).then(() => {
+            })
+            .then(() => {
                 window.location.reload();
             });
         } else {
@@ -91,7 +92,11 @@ function displayRemindTime() {
                     let userData = doc.data().remindTime;
                     console.log(userData)
                     // ensure only display alarms if exist
-                    if (userData !== undefined) {
+                    if (userData.length ==0){
+                        document.getElementById('alarm-goes-here').innerText = 'You have no alarm yet!!'
+                        console.log(userData.length)
+                    }
+                    if (userData != 0) {
                         document.getElementById('alarm-goes-here').innerHTML = '';
                         document.getElementById('alarm-goes-here').innerHTML = `<ol id="alarm_list"></ol>`;
                         //loop through remindTime array

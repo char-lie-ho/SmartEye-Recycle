@@ -3,3 +3,10 @@
 node_modules/
 .vscode/
 firebaseAPI_smart_eye.js
+.firebaserc
+404.html
+firestore.indexes.json
+.gitignore
+firebase.json
+firestore.rules
+.firebase/hosting..cache

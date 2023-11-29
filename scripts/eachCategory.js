@@ -16,10 +16,6 @@ categoryRef.get()
             const image_url = doc.data().img;
 
             document.getElementById("material").innerText = title;
-            document.getElementById("recyclable-go-here").innerText = recyclable;
-            examples.forEach((item)=> {
-                document.getElementById("example-go-here").innerHTML += `<li>${item}</li>`;
-            })
             document.getElementById("instruction-go-here").innerHTML += '<h6>Where accepted:</h6>'
             instructionA.forEach((item) => {
                 document.getElementById("instruction-go-here").innerHTML += `<li>${item}</li>`

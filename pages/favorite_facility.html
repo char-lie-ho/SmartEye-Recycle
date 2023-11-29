@@ -26,6 +26,10 @@
 
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+        
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="../styles/stylesheet.css" type="text/css">
 </head>
@@ -39,21 +43,32 @@
         <h1 class="display-5 fw-bold"> Favorite Facility! </h1>
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4"> Lets Recycle Smart Together</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <button type="button" class="btn btn-outline-success btn-lg px-4"> Information
-                    <!-- <p> This facility is 1.9km away from your current location. </p> -->
-                </button>
-                <a href="facility_review.html" type="button" class="btn btn-outline-success btn-lg px-4"> Review
-                    <!-- <p> Others who have visited this facility has rated it 5 stars based on reviews of staff and
-                        cleanliness </p> -->
-                </a>
-                <button type="button" class="btn btn-outline-success btn-lg px-4"> Directions </button>
+            <div id="facilities-goes-here" class="row row-cols-auto d-grid gap-2 justify-content-center">
+                <template id="facilityTemplate">
+                    <div class="card py-2 mx-2">
+                        <img class="card-image card-img-top" src=" ..." alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <div style="font-variation-settings: 'FILL' 0, 'wght' 100, 'GRAD' 0, 'opsz' 48;">
+                                <h6>Address: <span class="card-address">placeholder</span></h6>
+                                <a class="btn btn-success card-href">More info.</a>
+                                <a class="btn btn card-href" id="favoriteButton">
+                                    <i class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 0; color: red;">
+                                        favorite
+                                    </i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
             </div>
         </div>
-    </div>
 
-    <!-- Footer -->
-    <footer id="footerPlaceholder"></footer>
+        <!-- Footer -->
+        <footer id="footerPlaceholder"></footer>
 
 </body>
 

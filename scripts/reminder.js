@@ -77,6 +77,7 @@ function cleandata(time, userDocRef) {
     }).then(
         Swal.fire('You have delete it.')
     )
+    displayRemindTime()
 }
 
 
@@ -94,7 +95,7 @@ function displayRemindTime() {
                     // ensure only display alarms if exist
                     if (userData.length == 0) {
                         userDocRef.update({
-                            noAlarm:"You have no alarm yet!"
+                            noAlarm: "You have no alarm yet!"
                         })
                         document.getElementById('alarm-goes-here').innerText = doc.data().noAlarm
                     }

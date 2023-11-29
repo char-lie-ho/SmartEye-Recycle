@@ -99,7 +99,7 @@ function displayRemindTime() {
                         })
                         document.getElementById('alarm-goes-here').innerText = doc.data().noAlarm
                     }
-                    if (userData != 0) {
+                    if (userData.length != 0) {
                         document.getElementById('alarm-goes-here').innerHTML = '';
                         document.getElementById('alarm-goes-here').innerHTML = `<ol id="alarm_list"></ol>`;
                         //loop through remindTime array

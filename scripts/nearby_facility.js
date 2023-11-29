@@ -23,6 +23,13 @@ function displayCardsDynamically(collection) {
                 //append each facility 
                 document.getElementById("facilities-goes-here").appendChild(eachcard);
 
+                //read from DB, ensure favorite icon is correct color
+                currentUser.get().then(userDoc => {
+                    var favorite = userDoc.data().favorite;
+                    if (favorite.includes(facilityID)) {
+                        document.getElementById(facilityID).style = "font-variation-settings: 'FILL' 1; color: red;"
+                    }
+                })
                 //favortie button
                 var favoriteButton = document.getElementById(facilityID);
                 favoriteButton.addEventListener("click", function () {
@@ -48,6 +55,7 @@ function updateFavourite(facilityID) {
             currentUser.get().then(userDoc => {
                 var favorite = userDoc.data().favorite;
                 let isFavorite = favorite.includes(facilityID)
+                console.log(favorite)
                 if (isFavorite) {
                     currentUser.update({
                         favorite: firebase.firestore.FieldValue.arrayRemove(facilityID)
@@ -69,22 +77,16 @@ function updateFavourite(facilityID) {
 }
 
 
-
 function main() {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             currentUser = db.collection("users").doc(user.uid); //global
-            console.log(currentUser)
             displayCardsDynamically("facility")  //input param is the name of the collection
-
-
-
         }
     })
 }
 
 main()
-
 
 // take the user back to the previous page
 function goBack() {

@@ -31,7 +31,7 @@ function displayCardsDynamically(collection) {
                         document.getElementById(title).style = "font-variation-settings: 'FILL' 1; color: red;"
                     }
                 })
-                //favortie button
+                //favortie button eventListener
                 var favoriteButton = document.getElementById(title);
                 favoriteButton.addEventListener("click", function () {
                     updateFavourite(title)
@@ -44,11 +44,7 @@ var currentUser;
 
 var favoriteBtn = document.querySelectorAll('.btn btn card-href')
 
-favoriteBtn.forEach(function (Btn) {
-    console.log('Element ID:', Btn.id);
-});
-
-
+// update the color of favorite button when clicked 
 function updateFavourite(title) {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
@@ -56,19 +52,16 @@ function updateFavourite(title) {
             currentUser.get().then(userDoc => {
                 var favorite = userDoc.data().favorite;
                 let isFavorite = favorite.includes(title)
-                console.log(favorite)
                 if (isFavorite) {
                     currentUser.update({
                         favorite: firebase.firestore.FieldValue.arrayRemove(title)
                     }).then(function () {
-                        console.log("bookmark has been removed for " + title);
                         document.getElementById(title).style = "font-variation-settings: 'FILL' 0; color: red;"
                     })
                 } else {
                     currentUser.update({
                         favorite: firebase.firestore.FieldValue.arrayUnion(title)
                     }).then(function () {
-                        console.log("bookmark has been saved for " + title);
                         document.getElementById(title).style = "font-variation-settings: 'FILL' 1; color: red;"
                     })
                 }

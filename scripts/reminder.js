@@ -58,9 +58,9 @@ function saveInToDatabase() {
                 remindTime: firebase.firestore.FieldValue.arrayUnion(remindTime),
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
             })
-            .then(() => {
-                window.location.reload();
-            });
+                .then(() => {
+                    window.location.reload(); //refresh the page to active trash button
+                });
         } else {
             console.log("No user is signed in");
             window.location.href = 'login.html';
@@ -92,9 +92,11 @@ function displayRemindTime() {
                     let userData = doc.data().remindTime;
                     console.log(userData)
                     // ensure only display alarms if exist
-                    if (userData.length ==0){
-                        document.getElementById('alarm-goes-here').innerText = 'You have no alarm yet!!'
-                        console.log(userData.length)
+                    if (userData.length == 0) {
+                        userDocRef.update({
+                            noAlarm:"You have no alarm yet!"
+                        })
+                        document.getElementById('alarm-goes-here').innerText = doc.data().noAlarm
                     }
                     if (userData != 0) {
                         document.getElementById('alarm-goes-here').innerHTML = '';
@@ -105,8 +107,8 @@ function displayRemindTime() {
                             let list_items = document.createElement('li');
                             // write text into <li>tag
                             list_items.textContent = time;
-                                                    
-                            
+
+
                             document.getElementById('alarm_list').appendChild(list_items)
                             trash = document.createElement('span')
                             trash.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -118,7 +120,6 @@ function displayRemindTime() {
 
                                 //TODO: delete from database
                                 cleandata(time, userDocRef);
-
                             })
                             list_items.append(trash)
                         })
@@ -134,9 +135,4 @@ function displayRemindTime() {
     });
 }
 
-
-function setup() {
-    displayRemindTime();
-}
-
-$(document).ready(setup);
+displayRemindTime()

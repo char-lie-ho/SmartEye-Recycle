@@ -18,7 +18,8 @@ function displayCardsDynamically(collection) {
                 eachcard.querySelector('.card-image').src = image_url
                 //load the appropriate facility
                 eachcard.querySelector('a').href = "facility_template.html?docID=" + facilityID;
-                eachcard.querySelector('i').id = facilityID;
+                // eachcard.querySelector('i').id = facilityID;
+                eachcard.querySelector('i').id = title
 
                 //append each facility 
                 document.getElementById("facilities-goes-here").appendChild(eachcard);
@@ -26,14 +27,14 @@ function displayCardsDynamically(collection) {
                 //read from DB, ensure favorite icon is correct color
                 currentUser.get().then(userDoc => {
                     var favorite = userDoc.data().favorite;
-                    if (favorite.includes(facilityID)) {
-                        document.getElementById(facilityID).style = "font-variation-settings: 'FILL' 1; color: red;"
+                    if (favorite.includes(title)) {
+                        document.getElementById(title).style = "font-variation-settings: 'FILL' 1; color: red;"
                     }
                 })
                 //favortie button
-                var favoriteButton = document.getElementById(facilityID);
+                var favoriteButton = document.getElementById(title);
                 favoriteButton.addEventListener("click", function () {
-                    updateFavourite(facilityID)
+                    updateFavourite(title)
                 })
             });
         })
@@ -48,27 +49,27 @@ favoriteBtn.forEach(function (Btn) {
 });
 
 
-function updateFavourite(facilityID) {
+function updateFavourite(title) {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             const user = firebase.auth().currentUser;
             currentUser.get().then(userDoc => {
                 var favorite = userDoc.data().favorite;
-                let isFavorite = favorite.includes(facilityID)
+                let isFavorite = favorite.includes(title)
                 console.log(favorite)
                 if (isFavorite) {
                     currentUser.update({
-                        favorite: firebase.firestore.FieldValue.arrayRemove(facilityID)
+                        favorite: firebase.firestore.FieldValue.arrayRemove(title)
                     }).then(function () {
-                        console.log("bookmark has been removed for " + facilityID);
-                        document.getElementById(facilityID).style = "font-variation-settings: 'FILL' 0; color: red;"
+                        console.log("bookmark has been removed for " + title);
+                        document.getElementById(title).style = "font-variation-settings: 'FILL' 0; color: red;"
                     })
                 } else {
                     currentUser.update({
-                        favorite: firebase.firestore.FieldValue.arrayUnion(facilityID)
+                        favorite: firebase.firestore.FieldValue.arrayUnion(title)
                     }).then(function () {
-                        console.log("bookmark has been saved for " + facilityID);
-                        document.getElementById(facilityID).style = "font-variation-settings: 'FILL' 1; color: red;"
+                        console.log("bookmark has been saved for " + title);
+                        document.getElementById(title).style = "font-variation-settings: 'FILL' 1; color: red;"
                     })
                 }
             })

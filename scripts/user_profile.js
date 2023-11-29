@@ -15,6 +15,7 @@ function getUserInfoFromAuth() {
                     var userEmail = user.email;
                     var userPhone = userDoc.data().phone;
                     var userCity = userDoc.data().city;
+                    var userFavorite = userDoc.data().favorite;
                     var userImage = userDoc.data().image;
 
                     //if the data fields are not empty, then write them in to the form.
@@ -30,6 +31,9 @@ function getUserInfoFromAuth() {
                     if (userImage != null) {
                         document.getElementById("mypic-goes-here").src = userImage
                     }
+                    if (userFavorite != null) {
+                        document.getElementById("favorite-goes-here").value = userFavorite
+                    }
 
                     // Insert user name using JS
                     document.getElementById("name-goes-here").innerText = userName;
@@ -42,9 +46,13 @@ function getUserInfoFromAuth() {
 
                     // Insert email using JS
                     document.getElementById("phone-goes-here").innerText = userPhone;
+
+                    // Insert favorite facility using JS
+                    for (i = 0; i < userFavorite.length; i ++){
+                        document.getElementById("favorite-goes-here").innerHTML += `<a href="#">${userFavorite[i]}</a><br>`;
+                    }
+
                     console.log(currentUser.uid)
-
-
                 })
         } else {
             // No user is signed in.
@@ -52,6 +60,7 @@ function getUserInfoFromAuth() {
         }
     });
 }
+getUserInfoFromAuth(); // Run the function
 
 function sync_changes() {
     //Get current user's profile
@@ -75,8 +84,6 @@ function sync_changes() {
 }
 
 
-
-getUserInfoFromAuth(); // Run the function
 
 function editUserInfo() {
     //Enable the form fields

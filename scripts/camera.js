@@ -10,7 +10,7 @@ function startScanner() {
       constraints: {
         width: 320,
         height: 370,
-        facingMode: "user"
+        facingMode: "environment"
       },
     },
     decoder: {

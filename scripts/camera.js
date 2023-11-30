@@ -93,8 +93,8 @@ function startScanner() {
       // Display the barcode on the html after successfully read the barcode
       document.getElementById('result').textContent = 'Your barcode is ' + barcodeHistory[0];
 
-      // Display the go button after successfully read the barcode
-      document.getElementById('go').style.display = 'inline'
+      // Display the Look Up button after successfully read the barcode
+      document.getElementById('lookUp').style.display = 'inline'
     }
   });
 
@@ -138,11 +138,11 @@ function areLast50BarcodesSame() {
 }
 
 
-// Go button
-// Alter the href inside go based on the barcode
+// Look up button
+// Alter the href inside look up based on the barcode
 // Add a click event listener to the button
-document.getElementById('go').addEventListener('click', function () {
-  document.getElementById('go')
+document.getElementById('lookUp').addEventListener('click', function () {
+  document.getElementById('lookUp')
     .setAttribute('href', `post_scan.html?${barcodeHistory[0]}`);
 });
 

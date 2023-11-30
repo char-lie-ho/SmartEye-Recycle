@@ -1,5 +1,3 @@
-var barcodeHistory = [];
-
 // Barbode scanner function
 function startScanner() {
   Quagga.init({
@@ -130,7 +128,7 @@ function startScanner() {
 
 startScanner()
 
-
+var barcodeHistory = [];
 // Check if the last 50 barcodes are the same
 function areLast50BarcodesSame() {
   // Check if all elements in the array are the same
@@ -191,6 +189,7 @@ document.getElementById('help').addEventListener('click', function () {
         <li>Click Restart to resume camera</li>
     </ul>
 
-    <p style='text-align: left'>For help, click the 'support' button to contact us. Happy recycling!</p>`
+    <p style='text-align: left'>For more help, click the 'support' button to contact us.</p>
+    <p>Happy recycling!</p>`
   });
 })

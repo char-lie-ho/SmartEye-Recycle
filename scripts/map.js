@@ -69,12 +69,10 @@ function showMap(currentLocation) {
 
                         // Coordinates
                         Coordinates = [doc.data().coordinates['_long'], doc.data().coordinates['_lat']];
-                        console.log(Coordinates)
 
                         cover = doc.data().image;
                         event_name = doc.data().name; // Event Name
-                        address = doc.data().address; // Text Preview
-
+                        address = doc.data().address; // Text Previewe
 
                 
                         openHourM = doc.data().hours_of_operation[0];

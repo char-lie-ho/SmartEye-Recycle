@@ -5,11 +5,10 @@ function goBack() {
 
 // read from database
 function displayCardsDynamically(collection, favoriteList) {
-
-    for (eachFavorite in favoriteList) {
-        let cardTemplate = document.getElementById("facilityTemplate"); // Retrieve the HTML element with the ID "hikeCardTemplate" and store it in the cardTemplate variable. 
+    favoriteList.forEach(eachFavorite => {
+        let cardTemplate = document.getElementById("facilityTemplate"); 
         const favFacility = db.collection('facility')
-        favFacility.where('name', '==', favoriteList[eachFavorite]) // pass the names of the facility from user, replace collection
+        favFacility.where('name', '==', eachFavorite)
             .get()
             .then(allFacilities => {
                 allFacilities.forEach(doc => { //iterate thru each doc
@@ -40,18 +39,11 @@ function displayCardsDynamically(collection, favoriteList) {
                     })
                     //favortie button eventListener
                     var favoriteButton = document.getElementById(title);
-                    favoriteButton.addEventListener("click", function () {
-                        console.log(title)
-                        updateFavourite(title)
-                    })
+                    favoriteButton.addEventListener("click", () => { updateFavourite(title) })
                 });
             })
-    }
+    })
 }
-
-var currentUser;
-
-var favoriteBtn = document.querySelectorAll('.btn btn card-href')
 
 // update the color of favorite button when clicked 
 function updateFavourite(title) {
@@ -61,13 +53,13 @@ function updateFavourite(title) {
             currentUser.get().then(userDoc => {
                 var favorite = userDoc.data().favorite;
                 let isFavorite = favorite.includes(title)
-                if (isFavorite) {
+                if (isFavorite) {   // already faved
                     currentUser.update({
                         favorite: firebase.firestore.FieldValue.arrayRemove(title)
                     }).then(function () {
                         document.getElementById(title).style = "font-variation-settings: 'FILL' 0; color: red;"
                     })
-                } else {
+                } else {  // not yet faved
                     currentUser.update({
                         favorite: firebase.firestore.FieldValue.arrayUnion(title)
                     }).then(function () {
@@ -79,7 +71,6 @@ function updateFavourite(title) {
     })
 }
 
-
 function main() {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
@@ -87,9 +78,12 @@ function main() {
             currentUser = db.collection("users").doc(user.uid); //global
             currentUser.get().then(userDoc => {
                 var favoriteList = userDoc.data().favorite;
-                displayCardsDynamically("facility", favoriteList)  //input param is the name of the collection
+                if (favoriteList.length == 0) {
+                    document.getElementById("facilities-goes-here").innerHTML = `<p>You have no favourite facility yet!</p>`
+                } else {
+                    displayCardsDynamically("facility", favoriteList)  //input param is the name of the collection
+                }
             })
-
         }
     })
 }

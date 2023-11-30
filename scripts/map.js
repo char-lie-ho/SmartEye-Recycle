@@ -1,5 +1,26 @@
 
-function showMap() {
+// Check if support Geolocation
+if ("geolocation" in navigator) {
+    // Get current location
+    navigator.geolocation.getCurrentPosition(
+        function (position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            const currentLocation = [longitude, latitude];
+            console.log("Current location:", currentLocation);
+            //Call the function to display the map with the user's location and event pins
+            showMap(currentLocation);
+        },
+        function (error) {
+            console.error("Current location fail:", error.message);
+        }
+    );
+} else {
+    console.error("Does not support Geolocation API");
+}
+
+function showMap(currentLocation) {
     //-----------------------------------------
     // Define and initialize basic mapbox data
     //-----------------------------------------
@@ -7,7 +28,7 @@ function showMap() {
     const map = new mapboxgl.Map({
         container: 'map', // Container ID
         style: 'mapbox://styles/mapbox/streets-v11', // Styling URL
-        center: [-123.10453053612734, 49.265045179724105], // Starting position
+        center: currentLocation, // Starting position
         zoom: 12 // Starting zoom
     });
 
@@ -228,8 +249,7 @@ function showMap() {
     addPostPins(map);
 }
 
-// Call the function to display the map with the user's location and event pins
-showMap();
+
 
 function addPostPins(map) {
 

@@ -25,6 +25,9 @@ categoryRef.get()
                 document.getElementById("instruction-go-here").innerHTML += `<li>${item}</li>`
             })          
             document.getElementById('material_image').setAttribute('src', image_url);
+
+            // change the title of the html dynamically 
+            document.querySelector('title').textContent = title
         } else {
             console.log('No such document!');
         }

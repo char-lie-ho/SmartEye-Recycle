@@ -103,7 +103,7 @@ function showMap(currentLocation) {
                                   ${openHourSa}<br>
                                   ${openHourSu}<br>
                                 </div>
-                                <a href="facility_template.html?docID=${doc.id}" target="_blank" title="Opens in a new window">More Info</a>`
+                                <a href="facility_template.html?docID=${doc.id}">More Info</a>`
                             },
                             'geometry': {
                                 'type': 'Point',

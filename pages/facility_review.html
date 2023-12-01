@@ -19,13 +19,13 @@
 
     <!-- Other libraries go here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <!-- firebaseAPI -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-    <!-- <script src="\scripts\firebaseAPI_smart_eye.js"></script> -->
 
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -33,19 +33,15 @@
     <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
 
-
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="../styles/stylesheet.css" type="text/css">
     <link rel="stylesheet" href="../styles/review.css" type="text/css">
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
-
 </head>
 
 <body>
     <!-- nav bar -->
     <nav id="navbarPlaceholder"></nav>
 
-    <!------------------------------->
     <div class="container col-md-6 py-5">
         <div class="row py-5">
             <form class="container">
@@ -179,31 +175,23 @@
                 <div class="d-flex justify-content-around">
                     <button id="submit_review" class="btn btn-primary" type="button">Submit feedback</button>
                     <span><input class="form-check-input" type="checkbox" value="" id="anonymous">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Anonymous Review
-                    </label></span>
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Anonymous Review
+                        </label></span>
                 </div>
             </form>
         </div>
     </div>
 
-    <!------------------------------->
 
     <!-- Footer -->
     <footer id="footerPlaceholder"></footer>
-
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
     <script src="../scripts/firebaseAPI_smart_eye.js"></script>
     <script src="../scripts/authentication.js"></script>
     <script src="../scripts/skeleton.js"></script>
     <script src="../scripts/facility_reviews.js"></script>
-
-    <!-- <script src="./scripts/script.js"></script> -->
-
 </body>
 
 </html>

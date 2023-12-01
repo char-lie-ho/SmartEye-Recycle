@@ -49,7 +49,7 @@ function getUserInfoFromAuth() {
 
                     // Insert favorite facility using JS
                     for (i = 0; i < userFavorite.length; i ++){
-                        document.getElementById("favorite-goes-here").innerHTML += `<a href="#">${userFavorite[i]}</a><br>`;
+                        document.getElementById("favorite-goes-here").innerHTML += `<a href="#" style="text-decoration: none">${userFavorite[i]}</a><br>`;
                     }
 
                     console.log(currentUser.uid)

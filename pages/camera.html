@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Scanner</title>
+    <title>Barcode Scanner</title>
     <meta name="comp1800 template" content="My 1800 App">
 
     <!-- Required meta tags -->
@@ -61,19 +61,23 @@
         <div class="row align-items-center g-5 py-5">
             <div class="col d-grid gap-2 justify-content-md-start">
                 <div class="row">
-                <div class="col-8"><h2>Barcode Scanner</h2></div>
-                <div class="col-4"><button type="button" class="btn btn-outline-primary btn-sm" id="help"><i
-                        class="material-icons">help</i></button></div></div>
+                    <div class="col-8">
+                        <h2>Barcode Scanner</h2>
+                    </div>
+                    <div class="col-4"><button type="button" class="btn btn-outline-primary btn-sm" id="help"><i
+                                class="material-icons">help</i></button></div>
+                </div>
                 <!-- camera -->
                 <div class="col embed-responsive modal-dialog">
                     <!-- Div to show the scanner -->
                     <div id="scanner-container" class="text-center"></div>
                     <h5><span id="result"></span></h5>
                 </div>
-
+                <!-- buttons -->
                 <div>
                     <div style="text-align: center; margin: auto">
-                        <a style="display:none" type="button" class="btn btn-success btn-lg px-4" id="lookUp"> Look up! </a>
+                        <a style="display:none" type="button" class="btn btn-success btn-lg px-4" id="lookUp"> Look up!
+                        </a>
                         <!-- <a type="button" class="btn btn-outline-secondary" href="#"> Help </a> -->
                         <button type="button" class="btn btn-outline-success btn-lg" id="stopButton"><i
                                 class="material-icons">pause</i></button>
@@ -81,7 +85,6 @@
                                 class="material-icons">restart_alt</i></button>
                         <button type="button" class="btn btn-outline-success btn-lg" id="keyboard"><i
                                 class="material-icons">keyboard</i></button>
-
                     </div>
                 </div>
             </div>
@@ -91,16 +94,11 @@
     <!-- Footer -->
     <footer id="footerPlaceholder"></footer>
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-
     <!-- Link to scripts of your own -->
     <script src="../scripts/firebaseAPI_smart_eye.js"></script>
     <script src="../scripts/skeleton.js"></script>
     <!-- Link to camera -->
     <script src="../scripts/camera.js"></script>
-    <!-- <script src="./scripts/script.js"></script> -->
 
 </body>
 

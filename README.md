@@ -24,9 +24,14 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 ## 4. Complete setup/installion/usage
 State what a user needs to do when they come to your project.  How do others start using your code or application?
 Here are the steps ...
-* ...
-* ...
-* ...
+1. Create a new account by providing necessary information such as username, email, and password.
+2. Try the barcode scanning feature to quickly obtain information about any item's recyclability.
+3. Alternatively, users can use the text-search function to search for recycling information by typing keywords.
+4. Access the facility page to view nearby or favourite recycling facilities. 
+5. Select a recycling facility from the list or map and get directions to reach the chosen location.
+6. Users can contribute to the community by writing reviews about their experiences with recycling facilities.
+7. Users may choose to set up recycling reminder alarms for scheduled recycling activities.
+8. Optionally, users can personalize their accounts by uploading profile pictures and editing personal information.
 
 ## 5. Known Bugs and Limitations
 Here are some known bugs:
@@ -85,7 +90,8 @@ It has the following subfolders and files:
 |   /search.svg                            # Obtained from Google material icon
 |   /charlie.jpeg                          # Charlie personal picture
 |   /Xinli.jpg                             # Xinli peraonal picture
-|   /profile.jpg                           # Cédric VT, via Unsplash
+|   /profile.jpg                           # Obtained from Unsplash by Cédric VT
+|   /landing.jpg                           # Obtained from Unsplash by Getty
 |
 ├── scripts                      # Folder for scripts
 |   /authentication.js           # Authentication for users 

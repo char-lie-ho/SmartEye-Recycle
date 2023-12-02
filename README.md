@@ -32,13 +32,17 @@ Here are the steps ...
 Here are some known bugs:
 * The barcode database is limited and primarily intended for testing purposes
 * The text-based search is limited to precise wordings for effective searches 
-* ...
+* The recycling reminder is not able to send any notification to users
+* The nearby facilities are not able to show the nearest facilities based users location
+* The recycling information database is not fully completed 
+
 
 ## 6. Features for Future
 What we'd like to build in the future:
-* ...
-* ...
-* ...
+* Fully implement the recycling reminder features
+* Enhance the recycling information in the database
+* Use another library for barcode reading to improve scanning functionality
+
 	
 ## 7. Contents of Folder
 Content of the project folder:
@@ -46,18 +50,67 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
+├── index.html              # landing HTML file, this is what users see when you come to url
 └── README.md
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
-├── pages                    # Folder for html files
-|   /index.html              # landing HTML file, this is what users see when you come to url
-├── images                   # Folder for images
-|   /blah.jpg                # Acknowledge source
-├── scripts                  # Folder for scripts
-|   /blah.js                 # 
+|
+├── pages                      # Folder for html files
+|   /about_us.html             # Developers' info
+|   /camera.html               # Barcode scanner
+|   /category_template.html    # Recycling information
+|   /facility_info.html        # Recycling facilities information
+|   /facility_review.html      # Write reviews for facility
+|   /favorite_facility.html    # Check useres' favourite facilities
+|   /login.html                # Login page
+|   /main.html                 # Main page after users login
+|   /map.html                  # A map to display recycling facilities
+|   /nearby_facility.html      # Display nearby facilities
+|   /post_scan.html            # Show a list of options for users after scanning barcode
+|   /recycling_reminder.html   # Setup recycling alarms 
+|   /search_instruction.html   # Main page for searching recycling items 
+|   /support.html              # A page for user to leave reviews for the app or contact developers
+|   /user_profile.html         # Update personal information for the users
+|
+├── images                                 # Folder for images
+|   /aluminum_foil.jpg                     # Obtained from Recycle BC
+|   /foam_packaging.jpg                    # Obtained from Recycle BC
+|   /glass_bottles_and_container.jpg       # Obtained from Recycle BC
+|   /paper_cardboard.jpg                   # Obtained from Recycle BC
+|   /plastic_bags_and_overwrap.jpg         # Obtained from Recycle BC
+|   /Plastic_bottles_and_containers.jpg    # Obtained from Recycle BC
+|   /map.svg                               # Obtained from Google material icon
+|   /barcode_scanner.svg                   # Obtained from Google material icon
+|   /search.svg                            # Obtained from Google material icon
+|   /charlie.jpeg                          # Charlie personal picture
+|   /Xinli.jpg                             # Xinli peraonal picture
+|   /profile.jpg                           # Cédric VT, via Unsplash
+|
+├── scripts                      # Folder for scripts
+|   /authentication.js           # Authentication for users 
+|   /camera.js                   # Barcode scanner
+|   /category.js                 # Read from database and display recycling information
+|   /facility_reviews.js         # Write reviews for facilities
+|   /facility_template.js        # Template for each facility
+|   /favourite_facility.js       # Display users' favorite facilities
+|   /firebaseAPI_smart_eye.js    # Firebase API
+|   /main.js                     # Dynamically display greeting message and users' name
+|   /map.js                      # Mapbox 
+|   /nearby_facility.js          # Read from database and display facilities 
+|   /post_scan.js                # Read the URL query and search in database to display recycling information
+|   /reminder.js                 # Read, write, delete recycling reminders in users collection 
+|   /script.js                   # Logout
+|   /search.js                   # Read from database and display recycling information
+|   /skeleton.js                 # Nav bar, footer, back button
+|   /user_profile.js             # Read from database and update users' information
+|
 ├── styles                   # Folder for styles
-|   /blah.css                # 
+|   /review.css              # Styles for facility_review.html
+|   /search.css              # Styles for search_instruction.html
+|   /stylesheet.css          # Styles for every page     
+|   /user_profile.css        # Styles for user_profile.html
+|
 ├── text                     # Folder for headers and footer
 |   /footer.html             # footer HTML file
 |   /nav_after_login.html    # navbar HTML file before login

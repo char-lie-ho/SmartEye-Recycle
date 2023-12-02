@@ -28,8 +28,11 @@ function getUserInfoFromAuth() {
                     if (userCity != null) {
                         document.getElementById("cityInput").value = userCity;
                     }
+                    // Use the default image when no uploaded image
                     if (userImage != null) {
                         document.getElementById("mypic-goes-here").src = userImage
+                    } else{
+                        document.getElementById("mypic-goes-here").src = "../images/profile.jpg"   
                     }
                     if (userFavorite != null) {
                         document.getElementById("favorite-goes-here").value = userFavorite
@@ -44,15 +47,13 @@ function getUserInfoFromAuth() {
                     // Insert city using JS
                     document.getElementById("city-goes-here").innerText = userCity;
 
-                    // Insert email using JS
+                    // Insert phone using JS
                     document.getElementById("phone-goes-here").innerText = userPhone;
 
                     // Insert favorite facility using JS
                     for (i = 0; i < userFavorite.length; i ++){
                         document.getElementById("favorite-goes-here").innerHTML += `<a href="#" style="text-decoration: none">${userFavorite[i]}</a><br>`;
                     }
-
-                    console.log(currentUser.uid)
                 })
         } else {
             // No user is signed in.
@@ -117,8 +118,6 @@ async function saveUserInfo() {
 }
 
 // upload profile
-
-
 const imageInput = document.getElementById('imageInput');
 const imgSrc = document.getElementById('mypic-goes-here');
 
@@ -156,7 +155,6 @@ function uploadImage() {
         alert('Please select an image file.');
     }
 }
-
 
 // take the user back to the previous page
 function goBack() {

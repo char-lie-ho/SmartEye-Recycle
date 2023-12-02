@@ -59,7 +59,7 @@ function submitReview() {
             // Provide feedback to the user
             swal("Review submitted successfully!");
             document.querySelector('.confirm').addEventListener('click', function () {
-                window.location.href = "facility_template.html?docID=" + facilityID;
+                window.location.href = "facility_info.html?docID=" + facilityID;
             });
         })
 }

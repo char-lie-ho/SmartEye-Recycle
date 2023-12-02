@@ -8,7 +8,6 @@ if ("geolocation" in navigator) {
             const longitude = position.coords.longitude;
 
             const currentLocation = [longitude, latitude];
-            console.log("Current location:", currentLocation);
             //Call the function to display the map with the user's location and event pins
             showMap(currentLocation);
         },
@@ -56,13 +55,10 @@ function showMap(currentLocation) {
 
                     allFacilities.forEach(doc => {
                         var facility = doc.data();
-                        console.log(facility);
                         if (facility.coordinates) {
                             // Access the latitude and longitude values
                             var latitude = facility.coordinates.latitude;
                             var longitude = facility.coordinates.longitude;
-                            // Log the coordinates
-                            console.log("Latitude: " + latitude + ", Longitude: " + longitude + doc.id);
                         } else {
                             console.log("Coordinates not found for document with ID: " + doc.id);
                         }
@@ -103,7 +99,7 @@ function showMap(currentLocation) {
                                   ${openHourSa}<br>
                                   ${openHourSu}<br>
                                 </div>
-                                <a href="facility_template.html?docID=${doc.id}">More Info</a>`
+                                <a href="facility_info.html?docID=${doc.id}">More Info</a>`
                             },
                             'geometry': {
                                 'type': 'Point',

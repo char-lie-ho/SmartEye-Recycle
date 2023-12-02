@@ -17,7 +17,7 @@ function displayCardsDynamically(collection) {
                 eachcard.querySelector('.card-address').innerHTML = address;
                 eachcard.querySelector('.card-image').src = image_url
                 //load the appropriate facility
-                eachcard.querySelector('a').href = "facility_template.html?docID=" + facilityID;
+                eachcard.querySelector('a').href = "facility_info.html?docID=" + facilityID;
                 // eachcard.querySelector('i').id = facilityID;
                 eachcard.querySelector('i').id = title
 

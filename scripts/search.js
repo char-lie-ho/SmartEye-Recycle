@@ -17,12 +17,9 @@ function displayCardsDynamically(collection) {
                 let newcard = cardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
                 //update title and text and image
                 newcard.querySelector('.card-title').innerHTML = title;
-                newcard.querySelector('.card-img').src = `../images/${imageCode}.jpg`; //Example: NV01.jpg
+                newcard.querySelector('.card-img').src = `../images/${imageCode}.jpg`; 
                 newcard.querySelector('a').href = "category_template.html?docID=" + docID;
-                // console.log(title)
                 document.getElementById("categories-goes-here").appendChild(newcard);
-
-                //i++;   //Optional: iterate variable to serve as unique ID
             })
         })
 }
@@ -33,8 +30,6 @@ function saveSearchandRedirect() {
     var keywords = document.getElementById("searchText").value;
     localStorage.setItem("keywords", keywords)
     keywords = keywords.toLowerCase().trim();
-    console.log(keywords);
-    // window.location.href = 'category_search_by_words.html';
 
     //obtain the document name inside category from database
     const categoryRef = db.collection('category');

@@ -9,18 +9,16 @@ categoryRef.get()
     .then((doc) => {
         if (doc.exists) {
             const title = doc.data().categoryDocID;
-            const instructionA = doc.data().instruction['WHERE ACCEPTED'];
+            const instructionAccept = doc.data().instruction['WHERE ACCEPTED'];
             const instructionNotAccept = doc.data().instruction['Not Accepted'];
-            const recyclable = doc.data().recyclable;
-            const examples = doc.data().examples;
             const image_url = doc.data().img;
 
             document.getElementById("material").innerText = title;
-            document.getElementById("instruction-go-here").innerHTML += '<h6>Where accepted:</h6>'
-            instructionA.forEach((item) => {
+            document.getElementById("instruction-go-here").innerHTML += '<h5>Where accepted:</h5>'
+            instructionAccept.forEach((item) => {
                 document.getElementById("instruction-go-here").innerHTML += `<li>${item}</li>`
             })
-            document.getElementById("instruction-go-here").innerHTML += '<h6>Not accepted:</h6>'
+            document.getElementById("instruction-go-here").innerHTML += '<h5>Not accepted:</h5>'
             instructionNotAccept.forEach((item)=>{
                 document.getElementById("instruction-go-here").innerHTML += `<li>${item}</li>`
             })          

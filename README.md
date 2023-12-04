@@ -100,18 +100,19 @@ It has the following subfolders and files:
 |   /authentication.js           # Authentication for users 
 |   /camera.js                   # Barcode scanner
 |   /category.js                 # Read from database and display recycling information
+|   /facility_info.js        # Template for each facility
 |   /facility_reviews.js         # Write reviews for facilities
-|   /facility_template.js        # Template for each facility
-|   /favourite_facility.js       # Display users' favorite facilities
+|   /favorite_facility.js       # Display users' favorite facilities
 |   /firebaseAPI_smart_eye.js    # Firebase API
 |   /main.js                     # Dynamically display greeting message and users' name
 |   /map.js                      # Mapbox 
 |   /nearby_facility.js          # Read from database and display facilities 
 |   /post_scan.js                # Read the URL query and search in database to display recycling information
-|   /reminder.js                 # Read, write, delete recycling reminders in users collection 
+|   /recycling_reminder.js                 # Read, write, delete recycling reminders in users collection 
 |   /script.js                   # Logout
-|   /search.js                   # Read from database and display recycling information
+|   /search_instruction.js                   # Read from database and display recycling information
 |   /skeleton.js                 # Nav bar, footer, back button
+|   /support.js                  # Add to database in the feedbacks collection
 |   /user_profile.js             # Read from database and update users' information
 |
 ├── styles                   # Folder for styles

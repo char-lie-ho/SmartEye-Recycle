@@ -3,9 +3,6 @@ function goBack() {
     window.history.back();
 }
 
-var currentUser = null;
-
-
 function submitTime() {
     let alarmTime = document.getElementById('alarmtime').value;
     let newAlarmTime = new Date(alarmTime);
@@ -44,6 +41,7 @@ function submitTime() {
     return true
 }
 
+var currentUser = null;
 //save the time into database
 function saveInToDatabase() {
     if (submitTime()) {
@@ -91,7 +89,6 @@ function displayRemindTime() {
             userDocRef.get().then(function (doc) {
                 if (doc.exists) {
                     let userData = doc.data().remindTime;
-                    console.log(userData)
                     // ensure only display alarms if exist
                     if (userData.length == 0) {
                         userDocRef.update({

@@ -68,8 +68,7 @@ function showMap(currentLocation) {
 
                         cover = doc.data().image;
                         event_name = doc.data().name; // Event Name
-                        address = doc.data().address; // Text Previewe
- 
+                        address = doc.data().address; // Text Preview 
                         openHourM = doc.data().hours_of_operation[0];
                         openHourT = doc.data().hours_of_operation[1];
                         openHourW = doc.data().hours_of_operation[2];
@@ -224,7 +223,6 @@ function showMap(currentLocation) {
                             map.getCanvas().style.cursor = 'pointer';
                         });
 
-                        // Defaults
                         // Defaults cursor when not hovering over the userLocation layer
                         map.on('mouseleave', 'userLocation', () => {
                             map.getCanvas().style.cursor = '';

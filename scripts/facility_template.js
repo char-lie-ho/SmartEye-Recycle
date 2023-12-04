@@ -3,7 +3,6 @@ function displayFacilityInfo() {
     let ID = params.searchParams.get("docID"); //get value for key "id"
     let title = null
     localStorage.setItem('facilityID', ID); // save the facility id to local storage
-    // console.log(ID);
 
     //retrieve information from database
     db.collection("facility")
@@ -13,9 +12,8 @@ function displayFacilityInfo() {
             var title = doc.data().name;
             var address = doc.data().address;
             var operation = doc.data().hours_of_operation;
-            var facilityID = doc.id;
             var image_url = doc.data().image;
-            // console.log(image_url)
+
             // only populate title, and image
             document.getElementById("facility_name").innerText = title;
             document.querySelector('.card-address').innerHTML = address;
@@ -40,7 +38,6 @@ displayFacilityInfo()
 function displayReviewInfo() {
     let params = new URL(window.location.href); //get URL of search bar
     let ID = params.searchParams.get("docID");
-    // console.log(ID);
 
     //prepare cards to clone and add content
     let reviewCardGroup = document.getElementById("reviewGroup");
@@ -95,7 +92,6 @@ function displayReviewInfo() {
                 if (content != '') {
                     reviewCard.querySelector('.facility-accept-goes-here').innerHTML = `Accept: `
                     content.forEach((item) => {
-                        // console.log(item)
                         reviewCard.querySelector('.facility-accept-goes-here').innerHTML += `<li>${item}</li>`;
                     })
                 }

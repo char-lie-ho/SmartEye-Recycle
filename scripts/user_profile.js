@@ -84,8 +84,6 @@ function sync_changes() {
     })
 }
 
-
-
 function editUserInfo() {
     //Enable the form fields
     document.getElementById('personalInfoFields').disabled = false;

@@ -1,5 +1,7 @@
 # Project Title
 
+### Smart Eye Recycling
+
 ## 1. Project Description
 State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
 This browser based web application to assist and simplify the recycling process for residents in BC, Canada through the use of photo recognition. Our team includes Charlie Ho, Parteek Grewal, and Xinli Wang.

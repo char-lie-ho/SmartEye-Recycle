@@ -69,8 +69,7 @@ function showMap(currentLocation) {
                         cover = doc.data().image;
                         event_name = doc.data().name; // Event Name
                         address = doc.data().address; // Text Previewe
-
-                
+ 
                         openHourM = doc.data().hours_of_operation[0];
                         openHourT = doc.data().hours_of_operation[1];
                         openHourW = doc.data().hours_of_operation[2];
@@ -78,9 +77,6 @@ function showMap(currentLocation) {
                         openHourF = doc.data().hours_of_operation[4];
                         openHourSa = doc.data().hours_of_operation[5];
                         openHourSu= doc.data().hours_of_operation[6];
-
-                        // url = doc.data().link; // URL
-
 
                         // Pushes information into the features array
                         // in our application, we have a string description of the facilities
@@ -107,8 +103,6 @@ function showMap(currentLocation) {
                             }
                         });
                     });
-
-
 
                     // Adds features as a source of data for the map
                     map.addSource('places', {
@@ -240,13 +234,6 @@ function showMap(currentLocation) {
             }
         );
     });
-    addPostPins(map);
-}
-
-
-
-function addPostPins(map) {
-
 }
 
 // take the user back to the previous page

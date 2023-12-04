@@ -70,7 +70,6 @@ function updateFavourite(title) {
     })
 }
 
-
 function main() {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {

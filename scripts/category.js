@@ -14,11 +14,11 @@ categoryRef.get()
             const image_url = doc.data().img;
 
             document.getElementById("material").innerText = title;
-            document.getElementById("instruction-go-here").innerHTML += '<h5>Where accepted:</h5>'
+            document.getElementById("instruction-go-here").innerHTML += '<div style="padding-top: 15px;"><h5>Where accepted:</h5></div>'
             instructionAccept.forEach((item) => {
                 document.getElementById("instruction-go-here").innerHTML += `<li>${item}</li>`
             })
-            document.getElementById("instruction-go-here").innerHTML += '<h5>Not accepted:</h5>'
+            document.getElementById("instruction-go-here").innerHTML += '<div style="padding-top: 15px;"><h5>Not accepted:</h5></div>'
             instructionNotAccept.forEach((item)=>{
                 document.getElementById("instruction-go-here").innerHTML += `<li>${item}</li>`
             })          

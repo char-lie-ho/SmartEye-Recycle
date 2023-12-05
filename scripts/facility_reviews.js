@@ -13,8 +13,8 @@ $(document).ready(function () {
     }
 });
 
-//load the facility name
-var facilityID = localStorage.getItem("facilityID");
+//Get the facility id for later use
+const facilityID = localStorage.getItem("facilityID");
 
 // display the facility name 
 function getFacilityName(id) {
@@ -22,7 +22,7 @@ function getFacilityName(id) {
         .doc(id)
         .get()
         .then((facilities) => {
-            var facilityName = facilities.data().name
+            let facilityName = facilities.data().name
             document.getElementById('facilityName').innerHTML = facilityName
         })
 }
@@ -78,12 +78,8 @@ function goBack() {
 function getUserInfoFromAuth() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
-        if (user) {
-            currentUser = db.collection("users").doc(user.uid)
-            currentUser.get()
-                .then(() => {
-                    userName = user.displayName
-                })
+        if (user == null) {
+            window.location.href = "../pages/login.html"
         }
     })
 }

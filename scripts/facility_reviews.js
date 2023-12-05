@@ -78,8 +78,12 @@ function goBack() {
 function getUserInfoFromAuth() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
-        if (user == null) {
-            window.location.href = "../pages/login.html"
+        if (user) {
+            currentUser = db.collection("users").doc(user.uid)
+            currentUser.get()
+                .then(() => {
+                    userName = user.displayName
+    })
         }
     })
 }

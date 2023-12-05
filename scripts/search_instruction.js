@@ -27,9 +27,8 @@ function displayCardsDynamically(collection) {
 displayCardsDynamically("category");  //input param is the name of the collection
 
 function saveSearchandRedirect() {
-    var keywords = document.getElementById("searchText").value;
-    localStorage.setItem("keywords", keywords)
-    keywords = keywords.toLowerCase().trim();
+    var keywords = document.getElementById("searchText").value; // Get input search word
+    keywords = keywords.toLowerCase().trim(); // Process the input to make sure it's format in line with data in database
 
     //obtain the document name inside category from database
     const categoryRef = db.collection('category');
@@ -41,7 +40,7 @@ function saveSearchandRedirect() {
                 querySnapshot.forEach((doc) => {
                     // Retrieve the name of the document
                     var category = doc.id;
-                    window.location.href = `category_template.html?docID=${category}`
+                    window.location.href = `category_template.html?docID=${category}` // Direct to the instruction page
                 });
             } else {
                 Swal.fire('Sorry, Not found!')

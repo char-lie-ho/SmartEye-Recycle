@@ -29,6 +29,8 @@ function getFacilityName(id) {
 
 getFacilityName(facilityID);
 
+var userName = 'anonymous';
+
 // Submit a review
 function submitReview() {
     console.log('Submitted');

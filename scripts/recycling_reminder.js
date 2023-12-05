@@ -73,7 +73,7 @@ function cleandata(time, userDocRef) {
         remindTime: firebase.firestore.FieldValue.arrayRemove(time),
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
     }).then(
-        Swal.fire('You have delete it.')
+        Swal.fire('You have deleted it.')
     )
     displayRemindTime()
 }

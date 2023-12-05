@@ -7,7 +7,7 @@ function goBack() {
 function displayCardsDynamically(collection, favoriteList) {
     favoriteList.forEach(eachFavorite => {
         let cardTemplate = document.getElementById("facilityTemplate"); 
-        const favFacility = db.collection('facility')
+        const favFacility = db.collection(collection)
         favFacility.where('name', '==', eachFavorite)
             .get()
             .then(allFacilities => {

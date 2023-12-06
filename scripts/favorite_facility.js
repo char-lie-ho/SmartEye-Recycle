@@ -38,14 +38,14 @@ function displayCardsDynamically(collection, favoriteList) {
                     })
                     //favortie button eventListener
                     var favoriteButton = document.getElementById(title);
-                    favoriteButton.addEventListener("click", () => { updateFavourite(title) })
+                    favoriteButton.addEventListener("click", () => { updateFavorite(title) })
                 });
             })
     })
 }
 
 // update the color of favorite button when clicked 
-function updateFavourite(title) {
+function updateFavorite(title) {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             const user = firebase.auth().currentUser;

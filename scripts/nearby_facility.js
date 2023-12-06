@@ -16,9 +16,7 @@ function displayCardsDynamically(collection) {
                 eachcard.querySelector('.card-title').innerHTML = title;
                 eachcard.querySelector('.card-address').innerHTML = address;
                 eachcard.querySelector('.card-image').src = image_url
-                //load the appropriate facility
                 eachcard.querySelector('a').href = "facility_info.html?docID=" + facilityID;
-                // eachcard.querySelector('i').id = facilityID;
                 eachcard.querySelector('i').id = title
 
                 //append each facility 
@@ -31,10 +29,10 @@ function displayCardsDynamically(collection) {
                         document.getElementById(title).style = "font-variation-settings: 'FILL' 1; color: red;"
                     }
                 })
-                //favortie button eventListener
+                //favorite button eventListener
                 var favoriteButton = document.getElementById(title);
                 favoriteButton.addEventListener("click", function () {
-                    updateFavourite(title)
+                    updateFavorite(title)
                 })
             });
         })
@@ -45,7 +43,7 @@ var currentUser;
 var favoriteBtn = document.querySelectorAll('.btn btn card-href')
 
 // update the color of favorite button when clicked 
-function updateFavourite(title) {
+function updateFavorite(title) {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             const user = firebase.auth().currentUser;

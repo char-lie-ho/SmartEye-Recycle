@@ -49,7 +49,6 @@ function showMap(currentLocation) {
                 // Add the image to the map style.
                 map.addImage('eventpin', image); // Pin Icon
 
-                // READING information from "hikes" collection in Firestore
                 db.collection('facility').get().then(allFacilities => {
                     const features = []; // Defines an empty array for information to be added to
 
@@ -126,10 +125,6 @@ function showMap(currentLocation) {
                         }
                     });
 
-                    //-----------------------------------------------------------------------
-                    // Add Click event listener, and handler function that creates a popup
-                    // that displays info from "hikes" collection in Firestore
-                    //-----------------------------------------------------------------------
                     map.on('click', 'places', (e) => {
                         // Extract coordinates array.
                         // Extract description of that place
@@ -175,7 +170,6 @@ function showMap(currentLocation) {
                 // Adds user's current location as a source to the map
                 navigator.geolocation.getCurrentPosition(position => {
                     const userLocation = [position.coords.longitude, position.coords.latitude];
-                    // console.log(userLocation);
                     if (userLocation) {
                         map.addSource('userLocation', {
                             'type': 'geojson',

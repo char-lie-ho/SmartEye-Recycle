@@ -29,7 +29,7 @@ function getFacilityName(id) {
 
 getFacilityName(facilityID);
 
-var userName = 'anonymous';
+var userName;
 
 // Submit a review
 function submitReview() {

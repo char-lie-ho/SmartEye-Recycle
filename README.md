@@ -1,16 +1,20 @@
-# Project Title
+# Smart Eye Recycling
 
-### Smart Eye Recycling
+Website: https://smart-eye-app.web.app/
+
+User name: derek@bcit.ca
+
+Password: 123456
+
 
 ## 1. Project Description
-State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
-This browser based web application to assist and simplify the recycling process for residents in BC, Canada through the use of photo recognition. Our team includes Charlie Ho, Parteek Grewal, and Xinli Wang.
+SmartEye is a web-based web application designed to assist and simplify the recycling process for residents in Vancouver to streamline the process of recycling. Instead of using text-based search (although we also include this feature!), we provide another option through the use of barcode recognition. In addition, we also build a review system for the recycling facilities, displaying facility locations on a map, setting recycling reminders and even allowing users to personalize the application by modifying their profile pictures!
+
 
 ## 2. Names of Contributors
-List team members and/or short bio's here... 
-* This is Charlie. I have a cat. 
-* This is Xinli. I'm trying to see how this works
-* My name is Parteek and I am very excited to learn how to use git!
+* Chalie
+* Xinli
+* Parteek
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.

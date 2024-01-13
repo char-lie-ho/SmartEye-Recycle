@@ -1,22 +1,47 @@
-# Smart Eye Recycling
+# Smart Eye Recycling ♻️
+ 
+<img src="https://img.shields.io/badge/HTML5-DD4B25" alt="HTML5"> <img src="https://img.shields.io/badge/JavaScript-EBD54D" alt="JS"> <img src="https://img.shields.io/badge/FireStore-FFCB2B" alt="FireStore"> <img src="https://img.shields.io/badge/Mapbox-4061F3" alt="Mapbox"> <img src="https://img.shields.io/badge/jQuery-1066A9" alt="jQuery">
 
-Website: https://smart-eye-app.web.app/
-
-User name: derek@bcit.ca
-
-Password: 123456
+![smartEye](https://github.com/char-lie-ho/SmartEye-Recycle/assets/116076259/4d53431a-89c7-4c42-9e2c-29de6f3c9fac)
 
 
-## 1. Project Description
+# Summary: 📃
 SmartEye is a web-based web application designed to assist and simplify the recycling process for residents in Vancouver to streamline the process of recycling. Instead of using text-based search (although we also include this feature!), we provide another option through the use of barcode recognition. In addition, we also build a review system for the recycling facilities, displaying facility locations on a map, setting recycling reminders and even allowing users to personalize the application by modifying their profile pictures!
 
+### 👉 [Go to the deployed website](https://smart-eye-app.web.app/)
+To explore the features, you can use the following dummy account:
 
-## 2. Names of Contributors
-* Chalie
-* Xinli
-* Parteek
-	
-## 3. Technologies and Resources Used
+- **Username:** `demo@test.ca`
+- **Password:** `123456`
+
+# Key Features: 🔑
+### 1. Barcode scanner
+* Harness the power of your device's camera with our app's barcode scanning feature powered by QuaggaJS. Connect to our database, granting instant access to recycling information.
+
+<img src="https://github.com/char-lie-ho/SmartEye-Recycle/assets/116076259/e2b677a4-b97b-49ad-bcbe-e143dd6793a3" width="270" >
+
+### 2. Keyword search
+* Find recycling details with our keyword search feature. Simply enter relevant keywords to access the information you need quickly and efficiently.
+<img src="https://github.com/char-lie-ho/SmartEye-Recycle/assets/116076259/998e11ee-7c84-4cdf-8f12-5f79048e0085" width="270">
+
+### 3. Map display of recycling facilities
+* Explore nearby recycling facilities with our app's MapBox integration n a user-friendly map view.
+* Receive directions to the facilities as well!
+
+<img src="https://github.com/char-lie-ho/SmartEye-Recycle/assets/116076259/bb50ef59-d74f-450b-b4d6-7be76ac8a095" width="270">
+
+
+### 4. Facility review system
+* Share your valuable insights with fellow users by contributing facility reviews based on your recycling experiences. Enhance the community's understanding of recycling facilities 
+<img src="https://github.com/char-lie-ho/SmartEye-Recycle/assets/116076259/7224775f-7549-4246-94c2-0889c30cf6f9" width="270">
+
+### 5. Recycling alarm 
+* Never miss a recycling opportunity! Our app features a convenient recycling alarm to ensure you remember to take out your recyclables on time.
+
+### 5. Personalize features
+* Tailor your app experience to your preferences. Update your personal information and showcase your unique identity by easily changing your profile picture.
+
+# Technologies and Resources Used 💻
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
 * HTML, CSS, JavaScript
 * Bootstrap 5.0 (Frontend library)
@@ -28,7 +53,7 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 * SweetAlert 1.0 & 2.0 (Stylish popup boxes)
 * Unsplash website (images)
 
-## 4. Complete setup/installion/usage
+# Complete setup/installion/usage 🛠️
 State what a user needs to do when they come to your project.  How do others start using your code or application?
 Here are the steps ...
 1. Create a new account by providing necessary information such as username, email, and password.
@@ -40,7 +65,7 @@ Here are the steps ...
 7. Users may choose to set up recycling reminder alarms for scheduled recycling activities.
 8. Optionally, users can personalize their accounts by uploading profile pictures and editing personal information.
 
-## 5. Known Bugs and Limitations
+# Known Bugs and Limitations 🐞
 Here are some known bugs:
 * The barcode database is limited and primarily intended for testing purposes
 * The text-based search is limited to precise wordings for effective searches 
@@ -49,14 +74,21 @@ Here are some known bugs:
 * The recycling information database is not fully completed 
 
 
-## 6. Features for Future
+# Features for Future 🚀
 What we'd like to build in the future:
 * Fully implement the recycling reminder features
 * Enhance the recycling information in the database
 * Use another library for barcode reading to improve scanning functionality
 
-	
-## 7. Contents of Folder
+# Contributors 🙌
+* Chalie Ho: Lead developer and project coordinator. Bringing expertise to the team, ensuring the project stayed on course. Implemented key features of the project such as the barcode scanning functionality and database management and took on the final quality assurance role.
+  
+* Xinli Wang: Core designer and proactive developer, the creative mind behind the project, handling design and actively contributing to development. Making our map feature come to life and improved the keyword search, adding both style and functionality to the project feature.
+
+  
+* Parteek Grewal: Innovative content Specialist and spokesperson, conducting thorough research to provide comprehensive recycling information to our team. Parteek took the inititative to kickstart the map feature and added unique touch to the project with creative and insightful contributions.
+ 
+# Contents of Folder 📁
 Content of the project folder:
 
 ```

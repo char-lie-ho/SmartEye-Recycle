@@ -25,7 +25,7 @@ To explore the features, you can use the following dummy account:
 <img src="https://github.com/char-lie-ho/SmartEye-Recycle/assets/116076259/998e11ee-7c84-4cdf-8f12-5f79048e0085" width="270">
 
 ### 3. Map display of recycling facilities
-* Explore nearby recycling facilities with our app's MapBox integration n a user-friendly map view.
+* Explore nearby recycling facilities with our app's MapBox integration in a user-friendly map view.
 * Receive directions to the facilities as well!
 
 <img src="https://github.com/char-lie-ho/SmartEye-Recycle/assets/116076259/bb50ef59-d74f-450b-b4d6-7be76ac8a095" width="270">
@@ -53,7 +53,7 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 * SweetAlert 1.0 & 2.0 (Stylish popup boxes)
 * Unsplash website (images)
 
-# Complete setup/installion/usage 🛠️
+# Complete setup/installation/usage 🛠️
 State what a user needs to do when they come to your project.  How do others start using your code or application?
 Here are the steps ...
 1. Create a new account by providing necessary information such as username, email, and password.
@@ -70,7 +70,7 @@ Here are some known bugs:
 * The barcode database is limited and primarily intended for testing purposes
 * The text-based search is limited to precise wordings for effective searches 
 * The recycling reminder is not able to send any notification to users
-* The nearby facilities are not able to show the nearest facilities based users location
+* The nearby facilities are not able to show the nearest facilities based users' location
 * The recycling information database is not fully completed 
 
 
@@ -83,10 +83,10 @@ What we'd like to build in the future:
 # Contributors 🙌
 * Chalie Ho: Lead developer and project coordinator. Bringing expertise to the team, ensuring the project stayed on course. Implemented key features of the project such as the barcode scanning functionality and database management and took on the final quality assurance role.
   
-* Xinli Wang: Core designer and proactive developer, the creative mind behind the project, handling design and actively contributing to development. Making our map feature come to life and improved the keyword search, adding both style and functionality to the project feature.
+* Xinli Wang: Core designer and proactive developer, the creative mind behind the project, handling design and actively contributing to development. Making our map feature come to life and improving the keyword search, adding both style and functionality to the project feature.
 
   
-* Parteek Grewal: Innovative content Specialist and spokesperson, conducting thorough research to provide comprehensive recycling information to our team. Parteek took the inititative to kickstart the map feature and added unique touch to the project with creative and insightful contributions.
+* Parteek Grewal: Innovative content Specialist and spokesperson, conducting thorough research to provide comprehensive recycling information to our team. He took the initiative to kickstart the map feature and added a unique touch to the project with creative and insightful contributions.
  
 # Contents of Folder 📁
 Content of the project folder:
